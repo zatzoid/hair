@@ -11,7 +11,7 @@
     line-height: 30px;
     text-align: left;
     background: rgb(22, 117, 144);
-    background: linear-gradient(288deg, rgba(8, 84, 106, 1) 0%, rgba(23, 146, 188, 1) 28%, rgba(24, 161, 211, 1) 49%, rgba(25, 181, 241, 1) 100%);
+    background: linear-gradient(118deg, var(--col-blue) 0%, var(--col-blue) 20%, rgb(22, 129, 168) 50%, var(--col-blue) 79%, var(--col-blue) 100%);
     cursor: pointer;
     background-size: 200% 200%;
     background-position: 0 0;

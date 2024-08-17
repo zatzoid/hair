@@ -15,10 +15,13 @@
     cursor: pointer;
     text-decoration: none;
     transition: all .5s;
-  
+    background: linear-gradient(118deg, rgba(255, 229, 164, 1) 0%, rgba(255, 229, 164, 1) 20%, rgb(252, 165, 107) 50%, rgba(255, 229, 164, 1) 79%, rgba(255, 229, 164, 1) 100%);
+    background-size: 200% 200%;
+    background-position: 0 0;
 }
 
 .btn-yel:hover {
-    opacity: 1;
-    background: rgb(255, 205, 164);
+    opacity: 1 !important;
+    background-position: 100% 0;
+   
 }

@@ -20,6 +20,10 @@ window.addEventListener("DOMContentLoaded", function () {
     const healSliderBtns = healSliderMain.find('.heal__c-btn')
 
     healSliderBtns.on('click', (e) => healSlider(e, healSliderSelf, healSliderIndication, healSliderBtns))
+    healSliderSelf.on('touchstart', (e) => healTouch(e, healSliderBtns))
+    healSliderSelf.on('touchend', (e) => healTouch(e, healSliderBtns))
+
+
     /* heal slider */
 
 
@@ -30,8 +34,10 @@ window.addEventListener("DOMContentLoaded", function () {
     const packLeftBtn = packSliderMain.find('.slider-btn_left')
     const packRightBtn = packSliderMain.find('.slider-btn_right')
 
-    packLeftBtn.on('click', (e) => packSlider(e, packLeftBtn, packRightBtn, packSliderSelf))
-    packRightBtn.on('click', (e) => packSlider(e, packLeftBtn, packRightBtn, packSliderSelf))
+    packLeftBtn.on('click', (e) => sectionSlider(e, 'pack', packLeftBtn, packRightBtn, packSliderSelf, 2, 10))
+    packRightBtn.on('click', (e) => sectionSlider(e, 'pack', packLeftBtn, packRightBtn, packSliderSelf, 2, 10))
+    packSliderSelf.on('touchstart', (e) => sectionTouch(e, 'pack', packLeftBtn, packRightBtn, 2))
+    packSliderSelf.on('touchend', (e) => sectionTouch(e, 'pack', packLeftBtn, packRightBtn, 2))
     /* pack slider */
 
 
@@ -42,8 +48,11 @@ window.addEventListener("DOMContentLoaded", function () {
     const reviewsLeftBtn = reviewsSliderMain.find('.slider-btn_left')
     const reviewsRightBtn = reviewsSliderMain.find('.slider-btn_right')
 
-    reviewsLeftBtn.on('click', (e) => reviewsSlider(e, reviewsLeftBtn, reviewsRightBtn, reviewsSliderSelf))
-    reviewsRightBtn.on('click', (e) => reviewsSlider(e, reviewsLeftBtn, reviewsRightBtn, reviewsSliderSelf))
+    reviewsLeftBtn.on('click', (e) => sectionSlider(e, 'review', reviewsLeftBtn, reviewsRightBtn, reviewsSliderSelf, 1, 15))
+    reviewsRightBtn.on('click', (e) => sectionSlider(e, 'review', reviewsLeftBtn, reviewsRightBtn, reviewsSliderSelf, 1, 15))
+    reviewsSliderSelf.on('touchstart', (e) => sectionTouch(e, 'review', reviewsLeftBtn, reviewsRightBtn, 1))
+    reviewsSliderSelf.on('touchend', (e) => sectionTouch(e, 'review', reviewsLeftBtn, reviewsRightBtn, 1))
+
     /* reviews slider */
 
 
@@ -57,8 +66,8 @@ window.addEventListener("DOMContentLoaded", function () {
             $(e.target).hide()
         }
     })
-  
-   
+
+
     /* modal close */
 
 
@@ -119,63 +128,131 @@ window.addEventListener("DOMContentLoaded", function () {
     /* payment */
 
 
- //$('.modal-action-close').trigger('click')
 
 
 
 
 
+    /* diploms */
+    const diplomSliderMain = $('.diploms__c')
+    const diplomsSliderWrapper = document.querySelector('.diploms__c-slider-wrp')
+    const diplomSliderSelf = $('.diploms__c-slider-items')
+    const diplomLeftBtn = diplomSliderMain.find('.slider-btn_left')
+    const diplomRightBtn = diplomSliderMain.find('.slider-btn_right')
 
-    /*  const diplomSliderMain = $('.diploms__c')
-     const diplomsSliderWrapper = document.querySelector('.diploms__c-slider-wrp')
-     const diplomSliderSelf = $('.diploms__c-slider-items')
-     const diplomLeftBtn = diplomSliderMain.find('.slider-btn_left')
-     const diplomRightBtn = diplomSliderMain.find('.slider-btn_right')
- 
-     diplomRightBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf) })
-     diplomLeftBtn.on('click', (e) => {
-         diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf)
-     })
-     diplomsSliderWrapper.addEventListener('scroll', (e) => {
-         console.log(e.currentTarget.scrollLeft);
-         diplomCheckScroll(diplomLeftBtn, diplomRightBtn, scrollVal, diplomSliderSelf.width())
-     })
-  */
+    diplomRightBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf) })
+    diplomLeftBtn.on('click', (e) => {
+        diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf)
+    })
+    diplomsSliderWrapper.addEventListener('scroll', (e) => {
+        console.log(e.currentTarget.scrollLeft, e.currentTarget.offsetWidth, diplomSliderSelf.width());
+
+        diplomCheckScroll(diplomLeftBtn, diplomRightBtn, scrollVal, diplomSliderSelf.width())
+    })
+
 
 }, false);
 
 
 /*  */
+let healCurrSlide = 0
+let healTouchStart = 0 //touch start val
 function healSlider(evt, container, indication, allBtns) {
     const { index } = evt.currentTarget.dataset
-
+    healCurrSlide = Number(index)
     container.css({ transform: `translateX(-${index * 100}%)` })
     indication.css({ transform: `translateX(-${(index * 100)}% )` })
     allBtns.attr('disabled', false)
 
     $(evt.currentTarget).attr('disabled', true)
 }
+
+function healTouch(e, allBtns) {
+    if (e.type == 'touchstart') {
+        healTouchStart = e.touches[0].clientX
+
+    } else if (e.type == 'touchend') {
+        const endX = e.changedTouches[0].clientX
+
+
+        if (healTouchStart + 10 > endX && healCurrSlide + 1 < 6) {
+
+            const index = healCurrSlide + 1
+            allBtns.toArray()
+                .forEach(btn => {
+                    btn = $(btn)
+                    if (btn.attr('data-index') == index) {
+                        btn.trigger('click')
+                    }
+                })
+
+
+
+        } else if (healTouchStart + 10 < endX && healCurrSlide - 1 >= 0) {
+            const index = healCurrSlide - 1
+            allBtns.toArray()
+                .forEach(btn => {
+                    btn = $(btn)
+                    if (btn.attr('data-index') == index) {
+                        btn.trigger('click')
+                    }
+                })
+        }
+        healTouchStart = 0
+    }
+}
+
 /*  */
 
 
 
 /*  */
-let packCurrSlide = 0
-function packSlider(evt, leftbtn, rightBtn, container, max = 2) {
+
+let sliderState = {
+    pack: 0,
+    review: 0
+}
+let sectionTouchStart = 0
+
+function sectionSlider(e, type, leftbtn, rightBtn, container, max, gap = 0) {
     //max is index, start from 0
+    //type is key of sliderState
 
-    let { slideto } = evt.currentTarget.dataset
+    let { slideto } = e.currentTarget.dataset
     slideto = Number(slideto) > 0 ? 1 : -1
 
-    if (packCurrSlide + slideto >= 0 && packCurrSlide + slideto <= max) {
-        packCurrSlide = packCurrSlide + slideto
-        container.css({ transform: `translateX(calc(-${packCurrSlide * 100}% - ${10 * packCurrSlide}px))` })
+    if (sliderState[type] + slideto >= 0 && sliderState[type] + slideto <= max) {
+        sliderState[type] = sliderState[type] + slideto
+        container.css({ transform: `translateX(calc(-${sliderState[type] * 100}% - ${gap * sliderState[type]}px))` })
             .find('.drop-down-action_opened')
             .removeClass('drop-down-action_opened')
     }
 
-    rightBtn.attr('disabled', packCurrSlide + 1 > max)
-    leftbtn.attr('disabled', packCurrSlide - 1 < 0)
+    rightBtn.attr('disabled', sliderState[type] + 1 > max)
+    leftbtn.attr('disabled', sliderState[type] - 1 < 0)
+
+}
+
+
+
+
+function sectionTouch(e, type, leftbtn, rightBtn, max,) {
+
+    if (e.type == 'touchstart') {
+        sectionTouchStart = e.touches[0].clientX
+
+    } else if (e.type == 'touchend') {
+        const endX = e.changedTouches[0].clientX
+
+        if (sectionTouchStart + 50 > endX && sliderState[type] < max) {
+            rightBtn.trigger('click')
+
+        } else if (sectionTouchStart + 50 < endX && sliderState[type] - 1 >= 0) {
+            leftbtn.trigger('click')
+
+        }
+        sectionTouchStart = 0
+    }
 
 }
 /*  */
@@ -183,7 +260,7 @@ function packSlider(evt, leftbtn, rightBtn, container, max = 2) {
 
 
 /*  */
-/* let diplomCurrSlide = 1
+let diplomCurrSlide = 1
 function diplomSlider(evt, leftbtn, rightBtn, wrapper, container, max = 6) {
     //max is index, start from 0
     let { slideto } = evt.currentTarget.dataset
@@ -192,8 +269,8 @@ function diplomSlider(evt, leftbtn, rightBtn, wrapper, container, max = 6) {
     const scrollVal = (container.width() / max) * diplomCurrSlide
 
     wrapper.scrollTo(scrollVal, 0)
-    
- 
+
+
 
     diplomCheckScroll(leftbtn, rightBtn, scrollVal, container.width())
 }
@@ -201,7 +278,7 @@ function diplomCheckScroll(leftbtn, rightBtn, scrollVal, containerWidth) {
     if (scrollVal + 100 >= containerWidth) {
         rightBtn.attr('disabled', true)
     } else {
-        
+
         rightBtn.attr('disabled', false)
     }
 
@@ -211,27 +288,10 @@ function diplomCheckScroll(leftbtn, rightBtn, scrollVal, containerWidth) {
         leftbtn.attr('disabled', false)
     }
 
-} */
-/*  */
-
-
-/*  */
-let reviewsCount = 0
-function reviewsSlider(evt, leftbtn, rightBtn, container, max = 1) {
-    //max is index, start from 0
-    let { slideto } = evt.currentTarget.dataset
-    slideto = Number(slideto) > 0 ? 1 : -1
-
-    if (reviewsCount + slideto >= 0 && reviewsCount + slideto <= max) {
-        reviewsCount = reviewsCount + slideto
-        container.css({ transform: `translateX(calc(-${reviewsCount * 100}% / ${max} - ${15 * reviewsCount}px))` })
-
-    }
-
-    rightBtn.attr('disabled', reviewsCount + 1 > max)
-    leftbtn.attr('disabled', reviewsCount - 1 < 0)
 }
 /*  */
+
+
 
 
 /* work canvases */

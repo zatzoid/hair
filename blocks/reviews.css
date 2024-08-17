@@ -63,12 +63,13 @@
     border-radius: 30px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 15% 60% 25%;
 
 }
 
 .reviews__c-item-icon {
     margin-bottom: 20px;
+    width: fit-content;
 }
 
 .reviews__c-comment-wrp {
@@ -118,7 +119,7 @@
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 600;
-    line-height: 31px;
+    line-height: 22px;
     text-align: left;
 
 
@@ -151,6 +152,10 @@
 @media screen and (max-width: 500px) {
     .reviews__c-item {
         padding: 20px;
+    }
+    .reviews__c-item-commentary{
+        font-size: 12px;
+        
     }
 
 }
