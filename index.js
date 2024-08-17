@@ -57,14 +57,8 @@ window.addEventListener("DOMContentLoaded", function () {
             $(e.target).hide()
         }
     })
-    //УБЕРИ МЕНЯ
-    //УБЕРИ МЕНЯ
-    //УБЕРИ МЕНЯ
-    //УБЕРИ МЕНЯ
-    //УБЕРИ МЕНЯ
-    //УБЕРИ МЕНЯ
-    //УБЕРИ МЕНЯ
-    $('.modal-action-close').trigger('click')
+  
+   
     /* modal close */
 
 
@@ -125,7 +119,7 @@ window.addEventListener("DOMContentLoaded", function () {
     /* payment */
 
 
-
+ //$('.modal-action-close').trigger('click')
 
 
 
