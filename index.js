@@ -100,24 +100,53 @@ window.addEventListener("DOMContentLoaded", function () {
 
     /*canvas */
 
+    /* payment */
 
+    const payMain = $('.payment')
+    const payBtns = payMain.find('.payment__c-desc-btn')
+    const payImg = payMain.find('.payment__c-desc-img-data')
+    const payName = payMain.find('.payment__c-form-name')
+    const payPrice = payMain.find('.payment__c-form-price')
+    const map = {
+        lite: { name: 'Лайт', price: '14 950' },
+        standart: { name: 'Стандарт', price: '25 700' },
+        prem: { name: 'Премиальный', price: '39 800' }
+    }
 
-
-   /*  const diplomSliderMain = $('.diploms__c')
-    const diplomsSliderWrapper = document.querySelector('.diploms__c-slider-wrp')
-    const diplomSliderSelf = $('.diploms__c-slider-items')
-    const diplomLeftBtn = diplomSliderMain.find('.slider-btn_left')
-    const diplomRightBtn = diplomSliderMain.find('.slider-btn_right')
-
-    diplomRightBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf) })
-    diplomLeftBtn.on('click', (e) => {
-        diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf)
+    payBtns.on('click', (e) => {
+        const { type } = e.currentTarget.dataset
+        payBtns.attr('disabled', false)
+        $(e.currentTarget).attr('disabled', true)
+        payImg.attr('src', `./assets/payment/${type}.png`)
+        payName.text(map[type].name)
+        payPrice.text(map[type].price)
     })
-    diplomsSliderWrapper.addEventListener('scroll', (e) => {
-        console.log(e.currentTarget.scrollLeft);
-        diplomCheckScroll(diplomLeftBtn, diplomRightBtn, scrollVal, diplomSliderSelf.width())
-    })
- */
+
+    /* payment */
+
+
+
+
+
+
+
+
+
+    /*  const diplomSliderMain = $('.diploms__c')
+     const diplomsSliderWrapper = document.querySelector('.diploms__c-slider-wrp')
+     const diplomSliderSelf = $('.diploms__c-slider-items')
+     const diplomLeftBtn = diplomSliderMain.find('.slider-btn_left')
+     const diplomRightBtn = diplomSliderMain.find('.slider-btn_right')
+ 
+     diplomRightBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf) })
+     diplomLeftBtn.on('click', (e) => {
+         diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf)
+     })
+     diplomsSliderWrapper.addEventListener('scroll', (e) => {
+         console.log(e.currentTarget.scrollLeft);
+         diplomCheckScroll(diplomLeftBtn, diplomRightBtn, scrollVal, diplomSliderSelf.width())
+     })
+  */
 
 }, false);
 
