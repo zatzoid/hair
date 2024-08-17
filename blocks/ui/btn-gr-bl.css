@@ -1,0 +1,31 @@
+/* gradient blue btn */
+
+.btn-gr-bl {
+    display: block;
+    border-radius: 50px;
+    padding: 15px 28px;
+    color: var(--col-white);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    background: rgb(22, 117, 144);
+    background: linear-gradient(288deg, rgba(8, 84, 106, 1) 0%, rgba(23, 146, 188, 1) 28%, rgba(24, 161, 211, 1) 49%, rgba(25, 181, 241, 1) 100%);
+    cursor: pointer;
+    background-size: 200% 200%;
+    background-position: 0 0;
+    transition: all .5s;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-gr-bl:hover {
+    opacity: 1;
+    background-position: 100% 0;
+    -webkit-box-shadow: 2px 4px 18px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 2px 4px 18px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 4px 18px 0px rgba(34, 60, 80, 0.2);
+}

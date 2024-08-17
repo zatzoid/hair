@@ -1,0 +1,67 @@
+.spam {
+    padding: 60px 0;
+    color: var(--col-black);
+    background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%);
+
+}
+
+.spam__c {
+    display: grid;
+    grid-template-columns: min-content auto auto;
+
+    gap: 30px;
+    align-items: center;
+}
+
+.spam__c-img {
+    width: 116px;
+    height: 116px;
+}
+
+.spam__c-text {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 35.2px;
+    letter-spacing: -0.005em;
+    text-align: left;
+
+
+}
+
+.spam__c-form {
+    display: flex;
+    width: 100%;
+}
+
+.spam__c-form input {
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+}
+
+.spam__c-form button {
+    border-radius: 0 10px 10px 0;
+}
+
+@media screen and (max-width: 950px) {
+    .spam__c {
+        grid-template-columns: min-content auto;
+    }
+
+    .spam__c-form {
+        grid-column: 1 / span 2;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .spam__c-text {
+        font-size: 16px;
+        line-height: 25.6px;
+    }
+    .spam__c-img{
+        width: 90px;
+        height: 90px;
+    }
+
+}

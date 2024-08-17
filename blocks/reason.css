@@ -1,0 +1,138 @@
+.reason {
+
+    background-color: rgba(67, 178, 212, 1);
+    background-image: url(../assets/reason-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--col-white);
+}
+
+.reason-wrapper {
+    padding: 80px 0;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #43B2D4 47.46%, rgba(39, 147, 191, 0) 97.66%);
+}
+
+.reason__c {
+    max-width: 700px;
+}
+
+.reason__c-name {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 41.5px;
+    letter-spacing: -0.005em;
+    text-align: left;
+
+}
+
+.reason__c-head {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 46.5px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    margin: 25px 0 40px;
+
+}
+
+.reason__c-body {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+
+}
+
+.reason__c-info {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.reason__c-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.reason__c-info-text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25.6px;
+    text-align: left;
+    margin-bottom: 26px;
+
+}
+
+.reason__c-info-link {
+    border: 2px solid var(--col-white);
+    border-radius: 50px;
+    padding: 16px;
+    width: 100%;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+.reason__c-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reasone__c-info-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+}
+
+.reasone__c-info-item p {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.005em;
+    text-align: left;
+
+}
+
+@media screen and (max-width:768px) {
+    .reason-wrapper {
+        min-height: 100vh;
+        padding: 60px 0 30px ;
+        background: linear-gradient(90deg, #43B2D4 20.46%, rgba(39, 147, 191, 0) 97.66%);
+    }
+
+    .reason__c-info {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .reason__c-head {
+        font-size: 24px;
+        line-height: 30px;
+        margin: 5px 0 15px;
+    }
+
+    .reason__c-body {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+}

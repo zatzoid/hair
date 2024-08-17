@@ -1,0 +1,134 @@
+/* ui */
+@import url(./blocks/ui/yt-btn.css);
+@import url(./blocks/ui/btn-gr-bl.css);
+@import url(./blocks/ui/btn-yel.css);
+@import url(./blocks/ui/section-name.css);
+@import url(./blocks/ui/btn-tr.css);
+@import url(./blocks/ui/drop-down.css);
+@import url(./blocks/ui/slider-btn.css);
+@import url(./blocks/ui/modal.css);
+/* ui */
+
+@import url(./normalize.css);
+
+/* banners */
+@import url(./blocks/cookie.css);
+/* banners */
+
+
+@import url(./blocks/header.css);
+@import url(./blocks/heading.css);
+@import url(./blocks/commercial-red.css);
+@import url(./blocks/programm.css);
+@import url(./blocks/heal.css);
+@import url(./blocks/reason.css);
+@import url(./blocks/work.css);
+@import url(./blocks/hairProg.css);
+@import url(./blocks/toWho.css);
+@import url(./blocks/healBanner.css);
+@import url(./blocks/packs.css);
+@import url(./blocks/result.css);
+@import url(./blocks/doctor.css);
+@import url(./blocks/diploms.css);
+@import url(./blocks/effect.css);
+@import url(./blocks/faq.css);
+@import url(./blocks/reviews.css);
+@import url(./blocks/payment.css);
+@import url(./blocks/about.css);
+@import url(./blocks/news.css);
+@import url(./blocks/spam.css);
+@import url(./blocks/footer.css);
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    --max-width: 1200px;
+    --col-white: white;
+    --col-blue-dark: rgba(38, 54, 75, 1);
+    --col-blue: rgba(38, 155, 199, 1);
+    --col-black: rgba(38, 54, 75, 1);
+    --col-grey: rgba(138, 146, 158, 1);
+    --col-grey-light: rgba(235, 236, 243, 1);
+    --col-red: rgba(255, 132, 160, 1);
+    --col-green: rgba(213, 225, 93, 1);
+    --col-bg: #f0f0fd;
+    font-display: swap;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    color: var(--col-black);
+
+}
+
+a {
+    color: var(--col-white);
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: inter;
+    transition: all .2s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+input {
+    padding: 15px 20px;
+    box-sizing: border-box;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    border-radius: 15px;
+    border: 2px solid transparent;
+
+}
+
+input:focus {
+    outline: 2px solid var(--col-blue-dark);
+}
+
+
+.content-main {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 17px;
+    box-sizing: border-box;
+}
+
+.col-bl {
+    color: var(--col-blue);
+}
+
+.col-gr {
+    color: var(--col-green);
+}
+
+.col-red {
+    color: var(--col-red);
+}
+
+
+
+
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

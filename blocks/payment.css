@@ -1,0 +1,258 @@
+.payment {
+    padding: 60px 0;
+    background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%);
+    box-sizing: border-box;
+    color: var(--col-black);
+}
+
+.payment__c {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 30px;
+    overflow: hidden;
+
+}
+
+/* 
+description
+*/
+
+.payment__c-desc {
+    background-color: var(--col-white);
+    padding: 42px;
+    box-sizing: border-box;
+}
+
+.payment__c-desc-img {
+    width: 100%;
+    height: auto;
+    margin: 16px 0 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.payment__c-desc-img img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    max-height: 230px;
+    min-height: 150px;
+}
+
+.payment__c-desc-text-big {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 40px;
+
+}
+
+.payment__c-desc-text-small {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    letter-spacing: -0.005em;
+    text-align: left;
+
+}
+
+.payment__c-desc-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+
+}
+
+.payment__c-desc-btn {
+    flex: 1 1 125px;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 0;
+    border: 2px solid var(--col-grey);
+    border-radius: 15px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22.4px;
+    letter-spacing: -0.005em;
+    color: var(--col-grey);
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s;
+
+}
+
+.payment__c-desc-btn:hover {
+    opacity: 0.7;
+}
+
+.payment__c-desc-btn_light:disabled {
+    border-color: var(--col-green);
+    background-color: var(--col-green);
+    color: var(--col-white);
+    opacity: 1;
+}
+
+.payment__c-desc-btn_standart:disabled {
+    border-color: var(--col-red);
+    background-color: var(--col-red);
+    color: var(--col-white);
+    opacity: 1;
+}
+
+.payment__c-desc-btn_prem:disabled {
+    border-color: var(--col-blue);
+    background-color: var(--col-blue);
+    color: var(--col-white);
+    opacity: 1;
+}
+
+/* 
+form
+*/
+
+.payment__c-form {
+    background-color: var(--col-grey-light);
+    padding: 42px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment__c-form-b {
+    margin-top: 30px;
+}
+
+
+
+.payment__c-form-big-text {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    margin: 0 0 15px;
+
+}
+
+
+
+.payment__c-form-pay {
+    display: flex;
+    gap: 15px;
+
+}
+
+.payment__c-form-pay label {
+    padding: 17px 20px;
+    border-radius: 20px;
+    background-color: var(--col-white);
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.005em;
+
+
+}
+
+.payment__c-form input:focus {
+    outline: none;
+}
+
+.payment__c-form-userData input:focus {
+    outline: 2px solid var(--col-blue);
+}
+
+.payment__c-form-userData {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 11px 30px;
+    margin-bottom: 20px;
+
+}
+
+.payment__c-form-userData input {
+    width: 100%;
+}
+
+.payment__c-form-userData input:first-child {
+    grid-column: 1 / span 2;
+}
+
+
+.payment__c-from-checkbox {
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+
+}
+
+@media screen and (max-width:900px) {
+    .payment__c-form-big-text {
+        margin: 15px 0 10px;
+    }
+
+    .payment__c-form-pay {
+        flex-direction: column;
+    }
+
+    .payment__c-form-userData {
+        grid-template-columns: 1fr;
+    }
+
+    .payment__c-form-userData input:first-child {
+        grid-column: 1;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .payment__c {
+        grid-template-columns: 1fr;
+    }
+
+    .payment__c-desc-text-big {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 20px 0 10px;
+    }
+
+    .payment__c-desc-text-small {
+        font-size: 14px;
+        line-height: 22.4px;
+    }
+
+    .payment__c-form-big-text {
+        font-size: 16px;
+        line-height: 20px;
+
+    }
+
+    .payment__c-form-b {
+        margin-top: 15px;
+    }
+
+    .payment__c-form-pay label {
+        padding: 5px 15px;
+
+        font-size: 16px;
+
+        line-height: 20px;
+
+    }
+
+}

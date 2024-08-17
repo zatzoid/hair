@@ -1,0 +1,90 @@
+/* дроп с через абсолютный поз */
+
+.drop-down {
+    background-color: rgba(242, 246, 251, 1);
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 0 13px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    height: fit-content;
+
+}
+
+.drop-down__btn {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: all .5s;
+    border: none;
+
+}
+
+.drop-down__btn img {
+    transition: all .5s;
+}
+
+.drop-down:hover .drop-down__btn {
+    background-color: var(--col-white);
+}
+
+.drop-down__text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24.5px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    color: var(--col-black);
+
+}
+
+.drop-down__wrp {
+    width: 100%;
+    background-color: rgba(242, 246, 251, 1);
+    border-radius: 0 0 15px 15px;
+    grid-column: 1 / span 2;
+    max-height: 0;
+    transition: all .5s;
+    overflow: hidden;
+
+}
+
+.drop-down__wrp-c {
+    height: auto;
+    margin: 4px;
+    border-radius: 0 0 14px 14px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: var(--col-white);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.4px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    color: var(--col-grey);
+
+
+}
+
+
+.drop-down-action_opened .drop-down__wrp {
+    max-height: 100vh;
+}
+
+.drop-down-action_opened .drop-down__btn {
+    background-color: var(--col-white);
+}
+
+.drop-down-action_opened .drop-down__btn img {
+    transform: rotate(90deg);
+}

@@ -1,0 +1,44 @@
+.slider-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--col-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+
+    transition: all .5s;
+    box-shadow: -2px 2px 4px 2px rgba(34, 60, 80, 0.2);
+}
+
+.slider-btn_left {
+    box-shadow: 2px 2px 4px 2px rgba(34, 60, 80, 0.2);
+}
+
+.slider-btn:hover {
+    box-shadow: -2px 2px 4px 4px rgba(34, 60, 80, 0.2);
+}
+
+.slider-btn_left:hover {
+    box-shadow: 2px 2px 4px 4px rgba(34, 60, 80, 0.2);
+}
+.slider-btn:disabled{
+    box-shadow: 1px 1px 2px 1px rgba(34, 60, 80, 0.2) !important;  
+}
+
+.slider-btn_left svg {
+    transform: rotate(180deg);
+
+}
+
+.slider-btn svg path {
+    stroke: var(--col-blue)
+}
+
+.slider-btn:disabled svg path {
+    stroke: var(--col-grey-light)
+}

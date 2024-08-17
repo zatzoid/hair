@@ -1,0 +1,2371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- мэйн ксс -->
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- шрифты с сдн гугла-->
+    <!-- montseratt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- шрифты -->
+
+
+    <title>Document</title>
+</head>
+<!--  drop-down-action  drop-down-action_opened -->
+
+<body>
+
+    <div class="cookie modal-main">
+
+        <p>Пользуясь нашим сайтом, вы соглашаетесь с тем, что мы используем
+            <a href="#" target="_blank">cookies</a>
+        </p>
+        <button class=" modal-action-close"> ок</button>
+    </div>
+
+    <div class="modal modal-main modal-overlay">
+        <div class="modal-c">
+            <button class="modal-c-close modal-action-close">
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.75" y1="-0.75" x2="18.2417" y2="-0.75"
+                        transform="matrix(-0.675741 0.737139 -0.675741 -0.737139 12.8335 0)" stroke="#26364B"
+                        stroke-width="1.5" stroke-linecap="round" />
+                    <line x1="0.75" y1="-0.75" x2="18.2417" y2="-0.75"
+                        transform="matrix(-0.675741 -0.737139 0.675741 -0.737139 14 14)" stroke="#26364B"
+                        stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+
+            </button>
+
+            <div class="modal__discount">
+                <form>
+                    <p class="modal__discount-form-head">
+                        Получите персональную <span>скидку</span>
+                    </p>
+                    <p class="modal__discount-form-body">
+                        Оставьте заявку - мы расскажем о скидках
+                        и подберем для вас подходящий Пакет программы против выпадения волос
+                    </p>
+
+                    <input class="modal__discount-form-input" type="email" required placeholder="email" name="email">
+                    <input class="modal__discount-form-input" type="text" required placeholder="+7 000 000 00 00"
+                        name="phone">
+                    <button class="modal__discount-form-submit btn-gr-bl" type="submit">Отправить</button>
+                    <p class="modal__discount-form-subs">
+                        Нажимая на кнопку, я соглашаюсь с <a href="#">Политикой конфиденциальности</a>
+
+                    </p>
+                </form>
+                <img class="modal__discount-img" src="./assets/discount.png" alt="discount">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <header>
+        <div class="header__commercial">
+            <div class="content-main">
+                <div class="header__commercial-c">
+                    <div class="header__commercial-left">
+                        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.9474 2.9765C20.2894 1.41165 22.7106 1.41165 24.0526 2.9765C24.988 4.0672 26.513 4.44308 27.8481 3.912C29.7636 3.15005 31.9075 4.27525 32.3685 6.2845C32.6899 7.68496 33.8655 8.7265 35.2945 8.87671C37.3447 9.09221 38.7201 11.0848 38.1946 13.0782C37.8283 14.4676 38.3853 15.9362 39.5808 16.7333C41.296 17.8768 41.5878 20.2804 40.1961 21.8012C39.2261 22.8612 39.0368 24.4205 39.7249 25.6818C40.7122 27.4915 39.8536 29.7554 37.9146 30.4552C36.5631 30.9431 35.6709 32.2357 35.694 33.6724C35.7272 35.7336 33.9149 37.3391 31.8727 37.0577C30.4493 36.8616 29.0585 37.5915 28.4114 38.8744C27.4829 40.7149 25.132 41.2943 23.4545 40.0961C22.2853 39.261 20.7147 39.261 19.5455 40.0961C17.868 41.2943 15.5171 40.7149 14.5886 38.8744C13.9415 37.5915 12.5507 36.8616 11.1273 37.0577C9.08511 37.3391 7.27281 35.7336 7.306 33.6724C7.32914 32.2357 6.43689 30.9431 5.08539 30.4552C3.14635 29.7554 2.28778 27.4915 3.27506 25.6818C3.9632 24.4205 3.77388 22.8612 2.80387 21.8012C1.41219 20.2804 1.70404 17.8768 3.41924 16.7333C4.61473 15.9362 5.1717 14.4676 4.80542 13.0782C4.27991 11.0848 5.65532 9.09221 7.70549 8.87671C9.13447 8.7265 10.3101 7.68496 10.6315 6.2845C11.0925 4.27525 13.2364 3.15005 15.1519 3.912C16.487 4.44308 18.012 4.0672 18.9474 2.9765Z"
+                                fill="#6076DF" />
+                            <path
+                                d="M16.89 26L23.582 16.2H25.948L19.256 26H16.89ZM17.828 21.52C17.3333 21.52 16.89 21.4173 16.498 21.212C16.106 20.9973 15.7933 20.6847 15.56 20.274C15.336 19.8633 15.224 19.3687 15.224 18.79C15.224 18.2113 15.336 17.7213 15.56 17.32C15.7933 16.9093 16.106 16.5967 16.498 16.382C16.89 16.1673 17.3333 16.06 17.828 16.06C18.3227 16.06 18.766 16.1673 19.158 16.382C19.55 16.5967 19.858 16.9093 20.082 17.32C20.3153 17.7213 20.432 18.2113 20.432 18.79C20.432 19.3687 20.3153 19.8633 20.082 20.274C19.858 20.6847 19.55 20.9973 19.158 21.212C18.766 21.4173 18.3227 21.52 17.828 21.52ZM17.828 20.008C17.9867 20.008 18.1267 19.924 18.248 19.756C18.3787 19.5787 18.444 19.2567 18.444 18.79C18.444 18.3233 18.3787 18.006 18.248 17.838C18.1267 17.6607 17.9867 17.572 17.828 17.572C17.6787 17.572 17.5387 17.6607 17.408 17.838C17.2773 18.006 17.212 18.3233 17.212 18.79C17.212 19.2567 17.2773 19.5787 17.408 19.756C17.5387 19.924 17.6787 20.008 17.828 20.008ZM25.01 26.14C24.5153 26.14 24.072 26.0373 23.68 25.832C23.288 25.6173 22.9753 25.3047 22.742 24.894C22.518 24.4833 22.406 23.9887 22.406 23.41C22.406 22.8313 22.518 22.3413 22.742 21.94C22.9753 21.5293 23.288 21.2167 23.68 21.002C24.072 20.7873 24.5153 20.68 25.01 20.68C25.5047 20.68 25.948 20.7873 26.34 21.002C26.732 21.2167 27.04 21.5293 27.264 21.94C27.4973 22.3413 27.614 22.8313 27.614 23.41C27.614 23.9887 27.4973 24.4833 27.264 24.894C27.04 25.3047 26.732 25.6173 26.34 25.832C25.948 26.0373 25.5047 26.14 25.01 26.14ZM25.01 24.628C25.1687 24.628 25.3087 24.544 25.43 24.376C25.5607 24.1987 25.626 23.8767 25.626 23.41C25.626 22.9433 25.5607 22.626 25.43 22.458C25.3087 22.2807 25.1687 22.192 25.01 22.192C24.8607 22.192 24.7207 22.2807 24.59 22.458C24.4593 22.626 24.394 22.9433 24.394 23.41C24.394 23.8767 24.4593 24.1987 24.59 24.376C24.7207 24.544 24.8607 24.628 25.01 24.628Z"
+                                fill="white" />
+                        </svg>
+
+                        <p class="header__commercial-left-text"> <span>Горячее предложение </span> Скидка 20%</p>
+                        <p class="header__commercial-left-timer">00:00:00</p>
+
+                    </div>
+                    <a class="header__commercial-link" href="#secPacks">Посмотреть тариф</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-main">
+            <div class="header">
+                <div class="header__b">
+                    <img src="./assets/logo-white.svg" alt="WBS">
+                    <h2 class="header__slogan">школа&bull;Женской&bull;красоты</h2>
+                </div>
+
+                <div class="header__b header__b-links">
+                    <a href="https://wa.me/message/D44A6NYCZOSFA1" target="_blank" class="header__manager"> Написать
+                        менеджеру</a>
+                    <div class="header__social">
+                        <a href="https://t.me/Hair2021Bot" target="_blank" class="header__social-link">
+                            <img src="./assets/ui/soc-tg.svg" alt="tg">
+                        </a>
+
+                        <a href="https://wa.me/message/D44A6NYCZOSFA1" target="_blank" class="header__social-link">
+                            <img src="./assets/ui/soc-wa.svg" alt="wa">
+                        </a>
+
+                        <a href="https://vk.me/volosy.wbsschool" target="_blank" class="header__social-link">
+                            <img src="./assets/ui/soc-vk.svg" alt="vk">
+
+
+                        </a>
+                    </div>
+                </div>
+                <button class="header__navBtn drop-down-action ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="header__nav">
+                    <div class="content-main">
+                        <ul class="header__nav__items">
+                            <li class="header__nav__item">
+                                <a href="#" class="header__nav__item-link"> Главная</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="#secProgramm" class="header__nav__item-link"> Программа</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="#secHeal" class="header__nav__item-link"> Что мы лечим</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="#secReviews" class="header__nav__item-link"> Отзывы</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="#secFaq" class="header__nav__item-link"> FAQ</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="#secPacks" class="header__nav__item-link"> Цены</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="#secAbout" class="header__nav__item-link"> О нас</a>
+                            </li>
+                        </ul>
+                        <div class="header__nav__social">
+                            <a href="https://wa.me/message/D44A6NYCZOSFA1" target="_blank" class="header__manager">
+                                Написать
+                                менеджеру</a>
+                            <div class="header__social">
+                                <a href="https://t.me/Hair2021Bot" target="_blank" class="header__social-link">
+                                    <img src="./assets/ui/soc-tg.svg" alt="tg">
+                                </a>
+
+                                <a href="https://wa.me/message/D44A6NYCZOSFA1" target="_blank"
+                                    class="header__social-link">
+                                    <img src="./assets/ui/soc-wa.svg" alt="wa">
+                                </a>
+
+                                <a href="https://vk.me/volosy.wbsschool" target="_blank" class="header__social-link">
+                                    <img src="./assets/ui/soc-vk.svg" alt="vk">
+
+
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </nav>
+            </div>
+
+
+        </div>
+
+        <nav class="header__nav_fullscreen">
+            <div class="content-main">
+                <ul class="header__nav__items">
+                    <li class="header__nav__item">
+                        <a href="#" class="header__nav__item-link"> Главная</a>
+                    </li>
+                    <li class="header__nav__item">
+                        <a href="#secProgramm" class="header__nav__item-link"> Программа</a>
+                    </li>
+                    <li class="header__nav__item">
+                        <a href="#secHeal" class="header__nav__item-link"> Что мы лечим</a>
+                    </li>
+                    <li class="header__nav__item">
+                        <a href="#secReviews" class="header__nav__item-link"> Отзывы</a>
+                    </li>
+                    <li class="header__nav__item">
+                        <a href="#secFaq" class="header__nav__item-link"> FAQ</a>
+                    </li>
+                    <li class="header__nav__item">
+                        <a href="#secPacks" class="header__nav__item-link"> Цены</a>
+                    </li>
+                    <li class="header__nav__item">
+                        <a href="#secAbout" class="header__nav__item-link"> О нас</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="heading">
+            <div class="content-main">
+                <div class=" heading__content">
+                    <h1 class="heading__head">
+                        Лечение выпадения
+                        волос в клинике
+                        <span class="col-bl">онлайн</span>
+                    </h1>
+
+                    <h2 class="heading__subhead">
+                        “Восстановите свои волосы - восстановите свою жизнь”
+                    </h2>
+                    <ul class="heading__items">
+                        <li class="heading__item">
+                            <img src="./assets/ui/v.svg" alt="v">
+                            <p>Доверие… забота… конфиденциальность</p>
+                        </li>
+                        <li class="heading__item">
+                            <img src="./assets/ui/v.svg" alt="v">
+                            <p>Мы поможем вам вернуть здоровые волосы</p>
+                        </li>
+                    </ul>
+                    <div class="heading__yt">
+                        <a href="#" target="_blank" class="yt-btn">
+                            <span class="yt-btn__circle"></span>
+                            Смотреть видео
+                        </a>
+                    </div>
+
+
+                    <div class="heading__dd">
+
+                        <button class="heading__db-left drop-down-action ">
+                            <div>
+                                <p class="heading__db-left-sub">Причины выпадения волос</p>
+                                <p class="heading__db-left-name">Стресс и образ жизни</p>
+                            </div>
+
+                            <img class="heading__dd-left-arrow" src="./assets/ui/dd-arrow.svg" alt="dropdown">
+
+
+                        </button>
+
+                        <a class="heading__dd-link btn-gr-bl" href="https://t.me/Hair2021Bot" target="_blank">Бесплатная
+                            консультация
+                        </a>
+
+                        <div class="heading__dd-menu">
+                            <p class="heading__dd-menu-item">дефицит питательных веществ</p>
+                            <p class="heading__dd-menu-item">После родов</p>
+                        </div>
+
+                    </div>
+
+                    <a class="heading__link btn-gr-bl" href="https://t.me/Hair2021Bot" target="_blank">Бесплатная
+                        консультация
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="commercial-red">
+            <div class="content-main">
+                <div class=" commercial-red__content">
+                    <p>Восстановите волосы с вашим личным врачом прямо сейчас
+                    </p>
+                    <a href="tel:+79286009691" class="commercial-red__content-phone">
+                        <img src="./assets/ui/telephone.svg" alt="tel">
+                        +7 (928) 600-96-91
+                    </a>
+
+                    <a class=" commercial-red-content-tg btn-yel" href="https://t.me/Hair2021Bot" target="_blank">
+                        Хочу красивые волосы
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="programm" id="secProgramm">
+            <div class="content-main">
+                <div class="programm__c">
+                    <div class="programm__c-info">
+                        <h3 class="section-name">Программа против выпадения волос</h3>
+                        <h2 class="section-head">
+                            Как <span class="col-bl">за 1 месяц</span> остановить выпадение волос, чтобы
+                            они приобрели здоровый
+                            вид и густоту
+                        </h2>
+                        <p class="section-body">На прием к врачу не выходя из дома, достаточно иметь интернет
+                        </p>
+                    </div>
+                    <ul class="programm__c-grid">
+                        <li class="programm__c-grid-el programm__c-grid-el_one">
+                            <a href="https://vypadenie.volos.quiz.wbsschool.ru/" target="_blank">
+                                <div class="programm__c-grid-el-icon">
+                                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.125 13.5H5.25L9.375 1.125L17.625 25.875L21.75 13.5H25.875"
+                                            stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                                <h4 class="programm__c-grid-el-head">Диагностика</h4>
+                                <p class="programm__c-grid-el-body">И работа с пищевым поведением</p>
+                            </a>
+                        </li>
+                        <li class="programm__c-grid-el programm__c-grid-el_two">
+                            <a href="#" target="_blank">
+                                <div class="programm__c-grid-el-icon">
+                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M28.875 11V22C28.875 25.7969 25.7969 28.875 22 28.875H11C7.20305 28.875 4.125 25.7969 4.125 22V11C4.125 7.20305 7.20305 4.125 11 4.125H22C25.7969 4.125 28.875 7.20305 28.875 11Z"
+                                            stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M19.1125 24.75H13.8875C13.4319 24.75 13.0625 24.3807 13.0625 23.925V20.7625C13.0625 20.3068 12.6931 19.9375 12.2375 19.9375H9.075C8.61937 19.9375 8.25 19.5682 8.25 19.1125V13.8875C8.25 13.4319 8.61937 13.0625 9.075 13.0625H12.2375C12.6931 13.0625 13.0625 12.6931 13.0625 12.2375V9.075C13.0625 8.61937 13.4319 8.25 13.8875 8.25H19.1125C19.5682 8.25 19.9375 8.61937 19.9375 9.075V12.2375C19.9375 12.6931 20.3068 13.0625 20.7625 13.0625H23.925C24.3807 13.0625 24.75 13.4319 24.75 13.8875V19.1125C24.75 19.5682 24.3807 19.9375 23.925 19.9375H20.7625C20.3068 19.9375 19.9375 20.3068 19.9375 20.7625V23.925C19.9375 24.3807 19.5682 24.75 19.1125 24.75Z"
+                                            stroke="#269BC7" stroke-width="1.5" />
+                                    </svg>
+
+
+                                </div>
+                                <h4 class="programm__c-grid-el-head">Персональные рекомендации врача</h4>
+                                <p class="programm__c-grid-el-body">И поддержка в чате
+                                    с куратором
+                                </p>
+                            </a>
+                        </li>
+                        <li class="programm__c-grid-el programm__c-grid-el_three">
+                            <a href="https://t.me/Hair2021Bot" target="_blank">
+                                <div class="programm__c-grid-el-icon">
+                                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.5 28.25C6.90608 28.25 0.75 22.0938 0.75 14.5C0.75 6.90608 6.90608 0.75 14.5 0.75C22.0938 0.75 28.25 6.90608 28.25 14.5C28.25 22.0938 22.0938 28.25 14.5 28.25Z"
+                                            stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h4 class="programm__c-grid-el-head">Индивидуальные
+                                    онлайн-консультации врача</h4>
+                                <p class="programm__c-grid-el-body">Время приёма и подбор витаминов
+                                </p>
+                            </a>
+                        </li>
+                        <li class="programm__c-grid-el programm__c-grid-el_four">
+                            <a href="#" target="_blank">
+                                <div class="programm__c-grid-el-icon">
+                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.94965 9.625L27.5 24.75M9.94965 9.625C10.6028 8.89521 11 7.93148 11 6.875C11 4.59683 9.15317 2.75 6.875 2.75C4.59683 2.75 2.75 4.59683 2.75 6.875C2.75 9.15317 4.59683 11 6.875 11C8.09669 11 9.19434 10.4689 9.94965 9.625Z"
+                                            stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M9.94965 23.375L27.5 8.25M9.94965 23.375C10.6028 24.1048 11 25.0684 11 26.125C11 28.4032 9.15317 30.25 6.875 30.25C4.59683 30.25 2.75 28.4032 2.75 26.125C2.75 23.8468 4.59683 22 6.875 22C8.09669 22 9.19434 22.5312 9.94965 23.375Z"
+                                            stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                                <h4 class="programm__c-grid-el-head">Вы научитесь правильному уходу
+                                </h4>
+                                <p class="programm__c-grid-el-body">Остановите выпадение
+                                    и восстановите объем
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="heal" id="secHeal">
+            <div class="content-main">
+
+                <h3 class="section-name">Что мы лечим</h3>
+                <h2 class="section-head" style="text-align: center; margin: 25px 0 10px;"><span
+                        class="col-bl">Проблемы</span> или причины выпадения</h2>
+                <p class="section-body" style="text-align: center;">Причины выпадения и истончения волос</p>
+                <div class="heal__c">
+                    <ul class="heal__c-btns">
+                        <li class="heal__c-btn-indication">
+
+                        </li>
+                        <li>
+                            <button class="heal__c-btn" data-index="5">
+                                <div class="heal__c-btn-icon">
+                                    <img src="./assets/heal/heal-1.svg" alt="heal-1">
+
+                                </div>
+                                <p class="heal__c-btn-name">
+                                    Стресс и образ жизни
+                                </p>
+
+                            </button>
+                        </li>
+                        <li>
+                            <button class="heal__c-btn" data-index="4">
+                                <div class="heal__c-btn-icon">
+                                    <img src="./assets/heal/heal-2.svg" alt="heal-2">
+                                </div>
+                                <p class="heal__c-btn-name">
+                                    Заболевания щитовидной железы
+                                </p>
+
+                            </button>
+                        </li>
+                        <li>
+                            <button class="heal__c-btn" data-index="3">
+                                <div class="heal__c-btn-icon">
+                                    <img src="./assets/heal/heal-3.svg" alt="heal-2">
+
+                                </div>
+                                <p class="heal__c-btn-name">
+                                    Беременность и роды
+                                </p>
+
+                            </button>
+                        </li>
+                        <li>
+                            <button class="heal__c-btn" data-index="2">
+                                <div class="heal__c-btn-icon">
+                                    <img src="./assets/heal/heal-4.svg" alt="heal-2">
+
+                                </div>
+                                <p class="heal__c-btn-name">
+                                    Дефицит микроэлементов в организме
+                                </p>
+
+                            </button>
+                        </li>
+                        <li>
+                            <button class="heal__c-btn" data-index="1">
+                                <div class="heal__c-btn-icon">
+                                    <img src="./assets/heal/heal-5.svg" alt="heal-2">
+
+                                </div>
+                                <p class="heal__c-btn-name">
+                                    После COVID-19
+                                </p>
+
+                            </button>
+                        </li>
+                        <li>
+                            <button class="heal__c-btn" data-index="0" disabled>
+                                <div class="heal__c-btn-icon">
+                                    <img src="./assets/heal/heal-6.svg" alt="heal-2">
+
+                                </div>
+                                <p class="heal__c-btn-name">
+                                    Принимаемые лекарства
+                                </p>
+
+                            </button>
+                        </li>
+
+                    </ul>
+                    <div class="heal__c-slider">
+                        <ul class="heal__c-slides">
+                            <li class="heal__c-slide">
+                                <div class="heal__c-slide-img">
+                                    <picture>
+                                        <source media="(min-width: 780px)" srcset="./assets/heal/img-6.png">
+                                        <source media="(max-width: 779px)" srcset="#">
+                                        <img src="#" alt="nothing">
+                                    </picture>
+
+                                </div>
+                                <div class="heal__c-slide-body">
+                                    <h4 class="heal__c-slide-body-head">Принимаемые лекарства</h4>
+                                    <p class="heal__c-slide-body-text">
+
+                                        С током крови они проникают в волосяной фолликул и влияют на него.
+                                        <strong>Волосы выпадают</strong> обычно между 6 неделями и 3 месяцами после
+                                        начала лечения
+                                        препаратами. Если выпадение волос начинается сразу или через несколько дней, то
+                                        причиной является что-то другое. Лекарства могут существенно влиять на рост,
+                                        цвет и даже на структуру волос. Происходит нарушение синтеза белков, уменьшение
+                                        волосяной луковицы и замедление скорости роста волос. Выпадение волос может
+                                        возникнуть, например, из-за приема витамина А, антидепрессантов,
+                                        антикоагулянтов, <strong>противовирусных, пероральных</strong> контрацептивов и
+                                        др.
+
+                                    </p>
+                                    <a class="btn-tr " href="#">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="heal__c-slide">
+                                <div class="heal__c-slide-img">
+                                    <picture>
+                                        <source media="(min-width: 780px)" srcset="./assets/heal/img-5.png">
+                                        <source media="(max-width: 779px)" srcset="#">
+                                        <img src="#" alt="nothing">
+                                    </picture>
+
+                                </div>
+                                <div class="heal__c-slide-body">
+                                    <h4 class="heal__c-slide-body-head">После COVID-19</h4>
+                                    <p class="heal__c-slide-body-text">
+                                        Выпадение волос начинается внезапно. После того как иммунитет был направлен
+                                        на борьбу с вирусом, и остальные системы мало получали полезных элементов,
+                                        сгущается кровь, ухудшается микроциркуляция и нарушается кровоснабжение
+                                        верхнего слоя кожи. После <strong>коронавируса</strong> уменьшается количество
+                                        витаминов
+                                        группы В, стресс, интоксикация, низкий гемоглобин, нарушение функций печени.
+                                        Исходя из результатов анализов и обследований, доктор составит <strong>
+                                            эффективное
+                                            лечение</strong> для устранения внутреннего дисбаланса, который провоцирует
+                                        выпадение
+                                        волос
+
+                                    </p>
+                                    <a class="btn-tr " href="#">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="heal__c-slide">
+                                <div class="heal__c-slide-img">
+                                    <picture>
+                                        <source media="(min-width: 780px)" srcset="./assets/heal/img-4.png">
+                                        <source media="(max-width: 779px)" srcset="#">
+                                        <img src="#" alt="nothing">
+                                    </picture>
+
+                                </div>
+                                <div class="heal__c-slide-body">
+                                    <h4 class="heal__c-slide-body-head">Дефицит микроэлементов в организме</h4>
+                                    <p class="heal__c-slide-body-text">
+
+                                        Недостаточное поступление в организм питательных микроэлементов приводит к
+                                        структурным повреждениям стержня волоса, который на 80% состоит из белка. Это
+                                        причина их усиленного выпадения и поредения.
+                                        <strong> Для здоровья волос</strong> важны основные микроэлементы – железо,
+                                        селен, цинк, кальций,
+                                        хром, медь, йод, марганец и кремний. Для волос и кожи головы также полезны
+                                        полиненасыщенные жирные кислоты. Выпадение волос прекратится, если организм не
+                                        будет страдать от недостатка того или иного полезного микроэлемента. Начинать
+                                        нужно с корректировки питания и сна,
+                                        и по результатам анализов<strong> врач назначает</strong> необходимые препараты
+
+                                    </p>
+                                    <a class="btn-tr " href="#">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="heal__c-slide">
+                                <div class="heal__c-slide-img">
+                                    <picture>
+                                        <source media="(min-width: 780px)" srcset="./assets/heal/img-3.png">
+                                        <source media="(max-width: 779px)" srcset="#">
+                                        <img src="#" alt="nothing">
+                                    </picture>
+
+                                </div>
+                                <div class="heal__c-slide-body">
+                                    <h4 class="heal__c-slide-body-head">Беременность и роды</h4>
+                                    <p class="heal__c-slide-body-text">
+
+                                        У женщин <strong> во время беременности</strong> отмечается <strong> выпадение
+                                            волос</strong>, что может быть
+                                        следствием перенесенных заболеваний с температурой, приема некоторых
+                                        лекарственных препаратов, психо-эмоциональных стрессов. Эстрогены питают
+                                        фолликулы, а<strong> после родов</strong> уровни эстрогенов значительно
+                                        снижаются, и волосы,
+                                        находившиеся в стадии роста, вступают в стадию выпадения. Послеродовое выпадение
+                                        может становиться патологическим из-за <strong> дефицита железа</strong>, приема
+                                        оральных
+                                        контрацептивов без эстрогенов, послеродовой депрессии, невроза или просто общей
+                                        усталости
+
+                                    </p>
+                                    <a class="btn-tr " href="#">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="heal__c-slide">
+                                <div class="heal__c-slide-img">
+                                    <picture>
+                                        <source media="(min-width: 780px)" srcset="./assets/heal/img-2.png">
+                                        <source media="(max-width: 779px)" srcset="#">
+                                        <img src="#" alt="nothing">
+                                    </picture>
+
+                                </div>
+                                <div class="heal__c-slide-body">
+                                    <h4 class="heal__c-slide-body-head">Заболевания щитовидной железы</h4>
+                                    <p class="heal__c-slide-body-text">
+                                        <strong>
+                                            Гормон щитовидной железы</strong> играет важную роль в развитии и
+                                        поддержании волосяных
+                                        фолликулов. Когда в организме слишком много или недостаточно гормона щитовидной
+                                        железы, это может «шокировать эндокринную систему» и привести к состоянию
+                                        длительного выпадения волос. (Из-за неправильного функционирования щитовидной
+                                        железы гормоны, которые необходимы для обмена веществ, в волосяных фолликулах не
+                                        образуются). Плохой обмен веществ приводит к дефициту белков и витаминов в
+                                        волосах, в связи с чем они не растут должным образом. Структура стержня
+                                        становится ломкая, сухая и волосы выпадают
+
+                                    </p>
+                                    <a class="btn-tr " href="#">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="heal__c-slide">
+                                <div class="heal__c-slide-img">
+                                    <picture>
+                                        <source media="(min-width: 780px)" srcset="./assets/heal/img-1.png">
+                                        <source media="(max-width: 779px)" srcset="#">
+                                        <img src="#" alt="nothing">
+                                    </picture>
+
+                                </div>
+                                <div class="heal__c-slide-body">
+                                    <h4 class="heal__c-slide-body-head">Стресс и образ жизни</h4>
+                                    <p class="heal__c-slide-body-text">
+                                        <strong></strong>
+                                        Одна из самых частных форм<strong> потери волос вызвана стрессом</strong>.
+                                        Нервное потрясение
+                                        оказывает видимое воздействие на луковицы не сразу. Волосопад может настигнуть
+                                        спустя несколько месяцев после эмоционального упадка. Гормоны стресса -
+                                        <strong> кортизол, адреналин, норадреналин </strong>- могут подавлять рост волос
+                                        и заставлять их
+                                        впадать в фазу спячки. Стресс влияет не только на состояние стержня волос, но и
+                                        кожи головы. Гормоны активизируют работу сальных желез: усиливается жирность
+                                        кожи головы, может развиться себорейный дерматит
+
+                                    </p>
+                                    <a class="btn-tr " href="#">Подробнее</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="reason" id="secReason">
+            <div class="reason-wrapper">
+                <div class="content-main">
+                    <div class="reason__c">
+                        <h3 class="reason__c-name">Основная причина всего</h3>
+                        <h2 class="reason__c-head">Дефицит микроэлементов
+                            в организме человека</h2>
+                        <p class="reason__c-body">Большую часть необходимых микроэлементов мы получаем из пищи,
+                            поэтому дефицит чаще всего связан именно с неполноценным или
+                            неправильно организованным питанием. Если текущие потребности
+                            организма не обеспечиваются пищей, следует заняться изменением рациона</p>
+                        <div class="reason__c-info">
+                            <div>
+                                <p class="reason__c-info-text">Есть и другие причины, связанные с работой органов и
+                                    образом
+                                    жизни. Например:</p>
+                                <a href="#" target="_blank" class="reason__c-info-link">Узнать больше</a>
+                            </div>
+                            <ul class="reason__c-info-items">
+                                <li class="reasone__c-info-item">
+                                    <img src="./assets/ui/v-white.svg" alt="v">
+                                    <p>заболевания ЖКТ</p>
+
+                                </li>
+                                <li class="reasone__c-info-item">
+                                    <img src="./assets/ui/v-white.svg" alt="v">
+                                    <p>прием лекарств</p>
+
+                                </li>
+                                <li class="reasone__c-info-item">
+                                    <img src="./assets/ui/v-white.svg" alt="v">
+                                    <p>курение и регулярное употребление алкоголя</p>
+
+                                </li>
+                                <li class="reasone__c-info-item">
+                                    <img src="./assets/ui/v-white.svg" alt="v">
+                                    <p>перенесенные операции</p>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="work" id="secHowWeWork">
+            <div class="content-main">
+                <div class="work__c">
+                    <div>
+                        <h3 class="section-name">Как мы работаем?</h3>
+                        <h2 class="section-head work__c-head">Мы предлагаем <span class="col-bl">удаленный метод</span>
+                            лечения
+                            выпадения волос, исходя из
+                            диагностики</h2>
+
+                        <a href="https://t.me/Hair2021Bot" class="btn-gr-bl">Бесплатная консультация</a>
+                    </div>
+                    <div>
+                        <div class="work__c-img">
+                            <picture>
+                                <source media="(min-width: 769px)" srcset="./assets/work.png">
+                                <source media="(max-width: 768px)" srcset="#">
+                                <img src="#" alt="work">
+                            </picture>
+                        </div>
+                        <p class="work__c-online col-bl">онлайн</p>
+                        <ul class="work__c-graphs">
+                            <li class="work__c-graph">
+                                <p>Диагностика</p>
+                                <div class="work__c-graph-progress">
+                                    <canvas class="work__c-graph-progress-line"></canvas>
+                                </div>
+                            </li>
+                            <li class="work__c-graph">
+                                <p>Анализы</p>
+                                <div class="work__c-graph-progress">
+                                    <canvas class="work__c-graph-progress-line"></canvas>
+                                </div>
+                            </li>
+                            <li class="work__c-graph">
+                                <p>Назначения</p>
+                                <div class="work__c-graph-progress">
+                                    <canvas class="work__c-graph-progress-line"></canvas>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="hairProg">
+            <div class="content-main">
+                <div class="hairProg__c">
+                    <h2 class="hairProg__c-head">Программа против выпадения волос</h2>
+                    <p class="hairProg__c-body">Мы проводим диагностику, выявляем причины выпадения волос, настраиваем
+                        пищевое поведение, под личным руководством доктора подбираем препараты для роста
+                        и восстановления волос, а также время их приема</p>
+
+                    <div class="hairProg__c-grid">
+                        <div class="hairProg__c-grid-img">
+                            <picture>
+                                <source media="(min-width: 601px)" srcset="./assets/hairProg.png">
+                                <source media="(max-width: 600px)" srcset="#">
+                                <img src="#" alt="hairProg">
+                            </picture>
+                        </div>
+                        <ul class="hairProg__c-grid-items">
+                            <li class="hairProg__c-grid-item">
+                                <div class="hairProg__c-grid-item-left">
+                                    <div class="hairProg__c-grid-item-left-icon">
+                                        <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.5 23.375V28.875M11 28.875H22M13.75 13.75H19.25M16.5 11V16.5M10.725 23.375H22.275C24.5852 23.375 25.7403 23.375 26.6227 22.9254C27.3989 22.5299 28.0299 21.8989 28.4254 21.1227C28.875 20.2403 28.875 19.0852 28.875 16.775V10.725C28.875 8.41478 28.875 7.25968 28.4254 6.37729C28.0299 5.60112 27.3989 4.97008 26.6227 4.5746C25.7403 4.125 24.5852 4.125 22.275 4.125H10.725C8.41478 4.125 7.25968 4.125 6.37729 4.5746C5.60112 4.97008 4.97008 5.60112 4.5746 6.37729C4.125 7.25968 4.125 8.41478 4.125 10.725V16.775C4.125 19.0852 4.125 20.2403 4.5746 21.1227C4.97008 21.8989 5.60112 22.5299 6.37729 22.9254C7.25968 23.375 8.41478 23.375 10.725 23.375Z"
+                                                stroke="#269BC7" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="hairProg__c-grid-item-left-name">Подход</p>
+                                </div>
+                                <p class="hairProg__c-grid-item-right">
+                                    Предлагаем <strong>доступ к услугам</strong> наших экспертов <strong>с
+                                        помощью</strong>
+                                    <strong>онлайн консультирования</strong> и ведения клиента до результата.
+                                    Наш приоритет - качество предоставляемых услуг, поэтому
+                                    наши эксперты - <strong>реальные доктора с большим стажем</strong> .
+                                    Все назначения происходят по результатам ваших анализов.
+                                </p>
+                            </li>
+                            <li class="hairProg__c-grid-item">
+                                <div class="hairProg__c-grid-item-left">
+                                    <div class="hairProg__c-grid-item-left-icon">
+                                        <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.375 16.5L15.125 19.25L20.625 13.75M27.5 16.5C27.5 22.634 19.9926 27.0789 17.382 28.4391C17.0996 28.5862 16.9584 28.6598 16.7626 28.6979C16.61 28.7276 16.39 28.7276 16.2374 28.6979C16.0416 28.6598 15.9004 28.5862 15.618 28.4391C13.0074 27.0789 5.5 22.634 5.5 16.5V11.2992C5.5 10.1999 5.5 9.65021 5.6798 9.17772C5.83863 8.76032 6.09673 8.38789 6.43178 8.09261C6.81106 7.75836 7.32572 7.56536 8.35506 7.17936L15.7275 4.41468C16.0134 4.30749 16.1563 4.25389 16.3034 4.23264C16.4338 4.21379 16.5662 4.21379 16.6966 4.23264C16.8437 4.25389 16.9866 4.30749 17.2725 4.41468L24.6449 7.17936C25.6743 7.56536 26.1889 7.75836 26.5682 8.09261C26.9033 8.38789 27.1614 8.76032 27.3202 9.17772C27.5 9.65021 27.5 10.1999 27.5 11.2992V16.5Z"
+                                                stroke="#269BC7" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="hairProg__c-grid-item-left-name">Эксперты</p>
+                                </div>
+                                <p class="hairProg__c-grid-item-right">
+
+                                    Наши специалисты по восстановлению волос -<strong><a
+                                            class="hairProg__c-grid-item-right-link" href="#">
+                                            эндокринологи, дерматологи, трихологи,
+                                            тритментологи, парикмахеры, практикующие медсестры
+                                        </a></strong> , работают совместно с вами в режиме онлайн, чтобы обеспечить вам
+                                    квалифицированную помощь.
+                                </p>
+                            </li>
+                            <li class="hairProg__c-grid-item">
+                                <div class="hairProg__c-grid-item-left">
+                                    <div class="hairProg__c-grid-item-left-icon">
+                                        <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M22.0844 14.3052L19.25 23.3751H13.75L10.9157 14.3052C10.1074 11.7188 10.6208 8.90055 12.2889 6.76528L15.8499 2.20723C16.1802 1.78444 16.8198 1.78444 17.1501 2.20723L20.7111 6.76528C22.3792 8.90055 22.8925 11.7188 22.0844 14.3052Z"
+                                                stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M13.75 27.5C13.75 30.25 16.5 31.625 16.5 31.625C16.5 31.625 19.25 30.25 19.25 27.5"
+                                                stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M11.6875 17.1875C6.875 20.625 9.625 26.125 9.625 26.125L13.75 23.375"
+                                                stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M21.9053 17.1875C26.7178 20.625 23.9678 26.125 23.9678 26.125L19.8428 23.375"
+                                                stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M16.5 15.125C14.9812 15.125 13.75 13.8938 13.75 12.375C13.75 10.8562 14.9812 9.625 16.5 9.625C18.0188 9.625 19.25 10.8562 19.25 12.375C19.25 13.8938 18.0188 15.125 16.5 15.125Z"
+                                                stroke="#269BC7" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+
+                                    </div>
+                                    <p class="hairProg__c-grid-item-left-name">Технология</p>
+                                </div>
+                                <p class="hairProg__c-grid-item-right">
+                                    При соблюдении индивидуальных рекомендаций происходит <strong>комплексное
+                                        восстановление
+                                        организма</strong> человека, <strong>останавливается и прекращается выпадение
+                                        волос</strong>, общее
+                                    <strong>самочувствие</strong> и <strong>качество жизни улучшается</strong>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="toWho">
+            <div class="content-main">
+                <div class="toWho__c">
+                    <div class="toWho__c-head">
+                        <h3 class="section-name">Кому подходит</h3>
+                        <h2 class="section-head">Мы помогаем разным людям восстановить естественную красоту
+                            и молодость волос
+                        </h2>
+                        <p class="section-body">Останавливаем и предотвращаем выпадение волос</p>
+                    </div>
+                    <div class="toWho__c-body">
+                        <ul class="toWho__c-items">
+                            <li class="drop-down drop-down-action ">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">Всем</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>кто хочет попасть к специалисту высокого уровня, но живет далеко или в другом
+                                            городе</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="drop-down drop-down-action">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">Занятым</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>кто постоянно на бегу и некогда ходить в поликлинику</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="drop-down drop-down-action">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">От 20 лет и старше</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>у кого выпадают волосы по неизвестным причинам
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="drop-down drop-down-action">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">После лечения или болезни</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>а также после операций</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="drop-down drop-down-action">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">Мамочкам</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>которые мечтают заняться своей красотой и здоровьем</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="drop-down drop-down-action">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">Стресс и образ жизни</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>кто переживает регулярный стресс и тревогу, у кого нарушена норма сна и
+                                            бодрствования</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="drop-down drop-down-action">
+                                <button class="drop-down__btn ">
+                                    <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                                </button>
+                                <p class="drop-down__text">Обманутыми блогерами</p>
+                                <div class="drop-down__wrp">
+                                    <div class="drop-down__wrp-c">
+                                        <p>кого лечили не доктора, а блогеры по интернету</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-gr-bl"> Подробнее</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="healBanner">
+            <div class="content-main">
+                <div class="healBanner__c">
+                    <h3 class="healBanner__c-name">Лечение</h3>
+                    <h2 class="healBanner__c-head">Комплексная программа против выпадения волос</h2>
+                    <p class="healBanner__c-text">&bull; &shy; &shy;Оказание помощи из любой точки мира </p>
+
+                    <p class="healBanner__c-text">&bull; &shy; &shy;Достаточно иметь интернет</p>
+                    <div class="healBanner__c-bottom">
+                        <div>
+                            <p class="healBanner__c-bottom-call">Запись на звонок</p>
+                            <a href="tel:89286009691" target="_blank" class="healBanner__c-bottom-call-link">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.4164 9.45117L10.5114 9.23367C10.0539 9.18117 9.60393 9.33867 9.28143 9.66117L7.90143 11.0412C5.77893 9.96117 4.03893 8.22867 2.95893 6.09867L4.34643 4.71117C4.66893 4.38867 4.82643 3.93867 4.77393 3.48117L4.55643 1.59117C4.46643 0.833672 3.82893 0.263672 3.06393 0.263672H1.76643C0.918927 0.263672 0.213927 0.968672 0.266427 1.81617C0.663927 8.22117 5.78643 13.3362 12.1839 13.7337C13.0314 13.7862 13.7364 13.0812 13.7364 12.2337V10.9362C13.7439 10.1787 13.1739 9.54117 12.4164 9.45117Z"
+                                        fill="white" />
+                                </svg>
+
+                                8 (928) 600-96-91</a>
+                        </div>
+                        <div class="healBanner__c-social">
+                            <a class="healBanner__c-social-link" href="https://vk.me/volosy.wbsschool" target="_blank">
+                                <img src="./assets/ui/soc-vk.svg" alt="vk">
+                            </a>
+                            <a class="healBanner__c-social-link" href="https://t.me/Hair2021Bot" target="_blank">
+                                <img src="./assets/ui/soc-tg.svg" alt="vk">
+                            </a>
+                            <a class="healBanner__c-social-link" href="https://wa.me/message/D44A6NYCZOSFA1"
+                                target="_blank">
+                                <img src="./assets/ui/soc-wa.svg" alt="vk">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="packs" id="secPacks">
+            <div class="content-main">
+                <h2 class="section-head">Пакеты</h2>
+                <div class="packs__btns">
+                    <button class="slider-btn slider-btn_left" data-slideto="0" disabled>
+                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 12L7 6.5L1 1" stroke="#269BC7" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+
+                    </button>
+                    <button class="slider-btn slider-btn_right" data-slideto="1">
+                        <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 12L7 6.5L1 1" stroke="#269BC7" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+
+                    </button>
+                </div>
+                <div class="packs__items-wrapper">
+                    <ul class="packs__items">
+                        <li class="pack">
+                            <div class="pack__self">
+                                <div class="pack__self-img">
+                                    <img src="./assets/packs/standart.png" alt="pack">
+                                </div>
+                                <div class="pack-wrp-border">
+                                    <h3 class="pack__self-name">Самостоятельное Прохождение</h3>
+                                    <p class="pack__self-descript">Здесь ответственность за результат прохождения лично
+                                        на
+                                        Вас</p>
+
+                                    <div class="pack__self-price">
+                                        <p class="pack__self-price-data" style="color: rgba(213, 225, 93, 1);">14 950
+                                        </p>
+                                        <a href="#" class="pack__self-price-buy">купить <img
+                                                src="./assets/ui/basket.svg" alt="basket"></a>
+                                    </div>
+
+                                    <div class="pack__self-adv">
+                                        <p class="pack__self-adv-days">60 дней</p>
+                                        <ul class="pack__self-adv-icons">
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    opacity="0.3" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <mask id="mask0_15_45" style="mask-type:alpha"
+                                                        maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                        <rect width="20" height="20" fill="url(#pattern0_15_45)" />
+                                                    </mask>
+                                                    <g mask="url(#mask0_15_45)">
+                                                        <rect x="-1" y="-1" width="22.2353" height="22.2353"
+                                                            fill="#26364B" />
+                                                    </g>
+                                                    <defs>
+                                                        <pattern id="pattern0_15_45"
+                                                            patternContentUnits="objectBoundingBox" width="1"
+                                                            height="1">
+                                                            <use xlink:href="#image0_15_45"
+                                                                transform="scale(0.00195312)" />
+                                                        </pattern>
+                                                        <image id="image0_15_45" width="512" height="512"
+                                                            xlink:href="data:image/png;base64,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" />
+                                                    </defs>
+                                                </svg>
+
+
+                                            </li>
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="17" height="11" opacity="0.3" viewBox="0 0 17 11"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.1434 10.7272C3.40777 10.7272 0.136313 6.90522 0 0.54541H2.87306C2.96743 5.21335 5.08547 7.1906 6.76316 7.59828V0.54541H9.46856V4.57125C11.1253 4.39799 12.8657 2.56343 13.4529 0.54541H16.1582C15.7073 3.03226 13.8199 4.86682 12.4778 5.62103C13.8199 6.23255 15.9696 7.8327 16.7875 10.7272H13.8094C13.1698 8.79075 11.5762 7.29252 9.46856 7.08868V10.7272H9.1434Z"
+                                                        fill="#269BC7" />
+                                                </svg>
+                                            </li>
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                    opacity="0.3" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M1.88261 5.60679C6.17669 3.77797 9.03533 2.56276 10.4708 1.97321C14.5563 0.300794 15.4151 0.0120317 15.9672 0C16.0899 0 16.3598 0.0240637 16.5438 0.168445C16.6911 0.288762 16.7279 0.445175 16.7524 0.565493C16.7769 0.68581 16.8015 0.938476 16.7769 1.13098C16.5561 3.41702 15.5991 8.96365 15.1084 11.5144C14.8998 12.5972 14.4949 12.9582 14.1023 12.9943C13.2435 13.0665 12.5933 12.4408 11.7713 11.9114C10.4708 11.0812 9.74692 10.5639 8.48323 9.74571C7.02324 8.80724 7.96794 8.28987 8.80222 7.44765C9.02306 7.23108 12.7896 3.86219 12.8632 3.5614C12.8755 3.5253 12.8755 3.38092 12.7896 3.30873C12.7037 3.23654 12.581 3.2606 12.4829 3.28467C12.3479 3.30873 10.2867 4.65629 6.27484 7.3153C5.68594 7.71235 5.15838 7.90486 4.6799 7.89283C4.15234 7.88079 3.1463 7.60406 2.38563 7.36343C1.46547 7.07467 0.72934 6.91825 0.790684 6.41292C0.827491 6.14822 1.19555 5.88352 1.88261 5.60679Z"
+                                                        fill="#FF84A0" />
+                                                </svg>
+
+                                            </li>
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="15" height="14" opacity="0.3" viewBox="0 0 15 14"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.845661 6.9372C0.845239 8.15979 1.16612 9.35341 1.77609 10.4054L0.787109 14L4.48242 13.0354C5.5006 13.5882 6.64685 13.8795 7.81345 13.88H7.81643C11.658 13.88 14.7855 10.7674 14.7871 6.94258C14.7878 5.08877 14.0632 3.34577 12.7473 2.03455C11.4311 0.723324 9.68106 0.000800136 7.81643 0C3.97403 0 0.847151 3.11193 0.845543 6.93698L0.845661 6.9372ZM3.04613 10.2241L2.90819 10.006C2.32815 9.08795 2.02201 8.02689 2.02243 6.9375C2.0237 3.75836 4.62267 1.17172 7.81847 1.17172C9.36608 1.17232 10.8206 1.77296 11.9146 2.86273C13.0086 3.95257 13.6105 5.40136 13.6101 6.94202C13.6087 10.1214 11.0097 12.7082 7.81628 12.7082H7.81402C6.77422 12.7076 5.75448 12.4297 4.86516 11.9044L4.6535 11.7795L2.46054 12.3518L3.04613 10.2241ZM7.81643 13.88H7.8165H7.81643C7.81636 13.88 7.81629 13.88 7.81643 13.88Z"
+                                                        fill="#D5E15D" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6.17482 3.60039C6.02301 3.30931 5.86328 3.30349 5.71889 3.29837C5.60073 3.29403 5.46558 3.29432 5.33059 3.29432C5.19543 3.29432 4.97592 3.33806 4.7903 3.51296C4.60451 3.68787 4.08105 4.11067 4.08105 4.97056C4.08105 5.83054 4.80722 6.66147 4.90839 6.7782C5.00973 6.89471 6.31016 8.7158 8.36952 9.41632C10.0812 9.99853 10.4295 9.88273 10.801 9.85356C11.1725 9.82446 11.9998 9.4309 12.1686 9.02276C12.3375 8.61468 12.3375 8.26487 12.2869 8.19182C12.2362 8.11899 12.1011 8.07524 11.8985 7.9879C11.6958 7.90048 10.6996 7.47761 10.5139 7.41928C10.3281 7.36102 10.1931 7.33193 10.0579 7.50691C9.92284 7.68168 9.53478 8.07524 9.41653 8.19183C9.29836 8.30862 9.18011 8.32321 8.9775 8.23579C8.77481 8.14808 8.12221 7.96371 7.34805 7.36835C6.74568 6.90509 6.33905 6.33298 6.2208 6.15799C6.10263 5.98322 6.20818 5.88855 6.30977 5.80141C6.40081 5.72309 6.51246 5.59734 6.61381 5.49533C6.71491 5.39326 6.74864 5.32042 6.81617 5.20384C6.88379 5.08718 6.84998 4.98511 6.79935 4.89768C6.74864 4.81026 6.35487 3.94595 6.1747 3.60034"
+                                                        fill="#D5E15D" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="pack">
+                            <div class="pack__self">
+                                <div class="pack__self-img">
+                                    <img src="./assets/packs/standart.png" alt="pack">
+                                </div>
+                                <div class="pack-wrp-border">
+                                    <h3 class="pack__self-name">С поддержкой доктора в чате</h3>
+                                    <ul class="pack__self-advShort">
+                                        <li>
+                                            <p class="pack__self-descript">
+                                                Проходите программу под руководством доктора и ее помощницы
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p class="pack__self-descript">
+                                                Поддержка в чате VK, Telegram и WhatsApp
+                                            </p>
+
+                                        </li>
+                                    </ul>
+
+
+                                    <div class="pack__self-price">
+                                        <p class="pack__self-price-data" style="color: var(--col-red);">25 700
+                                        </p>
+                                        <a href="#" class="pack__self-price-buy">купить <img
+                                                src="./assets/ui/basket.svg" alt="basket"></a>
+                                    </div>
+
+                                    <div class="pack__self-adv">
+                                        <p class="pack__self-adv-days">60 дней</p>
+                                        <ul class="pack__self-adv-icons">
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    opacity="0.3" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <mask id="mask0_15_45" style="mask-type:alpha"
+                                                        maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                        <rect width="20" height="20" fill="url(#pattern0_15_45)" />
+                                                    </mask>
+                                                    <g mask="url(#mask0_15_45)">
+                                                        <rect x="-1" y="-1" width="22.2353" height="22.2353"
+                                                            fill="#26364B" />
+                                                    </g>
+                                                    <defs>
+                                                        <pattern id="pattern0_15_45"
+                                                            patternContentUnits="objectBoundingBox" width="1"
+                                                            height="1">
+                                                            <use xlink:href="#image0_15_45"
+                                                                transform="scale(0.00195312)" />
+                                                        </pattern>
+                                                        <image id="image0_15_45" width="512" height="512"
+                                                            xlink:href="data:image/png;base64,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" />
+                                                    </defs>
+                                                </svg>
+
+
+                                            </li>
+                                            <li class="pack__self-adv-icon"><svg width="17" height="11"
+                                                    viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.1434 10.7272C3.40777 10.7272 0.136313 6.90522 0 0.54541H2.87306C2.96743 5.21335 5.08547 7.1906 6.76316 7.59828V0.54541H9.46856V4.57125C11.1253 4.39799 12.8657 2.56343 13.4529 0.54541H16.1582C15.7073 3.03226 13.8199 4.86682 12.4778 5.62103C13.8199 6.23255 15.9696 7.8327 16.7875 10.7272H13.8094C13.1698 8.79075 11.5762 7.29252 9.46856 7.08868V10.7272H9.1434Z"
+                                                        fill="#269BC7" />
+                                                </svg>
+                                            </li>
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M1.88261 5.60679C6.17669 3.77797 9.03533 2.56276 10.4708 1.97321C14.5563 0.300794 15.4151 0.0120317 15.9672 0C16.0899 0 16.3598 0.0240637 16.5438 0.168445C16.6911 0.288762 16.7279 0.445175 16.7524 0.565493C16.7769 0.68581 16.8015 0.938476 16.7769 1.13098C16.5561 3.41702 15.5991 8.96365 15.1084 11.5144C14.8998 12.5972 14.4949 12.9582 14.1023 12.9943C13.2435 13.0665 12.5933 12.4408 11.7713 11.9114C10.4708 11.0812 9.74692 10.5639 8.48323 9.74571C7.02324 8.80724 7.96794 8.28987 8.80222 7.44765C9.02306 7.23108 12.7896 3.86219 12.8632 3.5614C12.8755 3.5253 12.8755 3.38092 12.7896 3.30873C12.7037 3.23654 12.581 3.2606 12.4829 3.28467C12.3479 3.30873 10.2867 4.65629 6.27484 7.3153C5.68594 7.71235 5.15838 7.90486 4.6799 7.89283C4.15234 7.88079 3.1463 7.60406 2.38563 7.36343C1.46547 7.07467 0.72934 6.91825 0.790684 6.41292C0.827491 6.14822 1.19555 5.88352 1.88261 5.60679Z"
+                                                        fill="#FF84A0" />
+                                                </svg>
+
+                                            </li>
+                                            <li class="pack__self-adv-icon"><svg width="15" height="14"
+                                                    viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.845661 6.9372C0.845239 8.15979 1.16612 9.35341 1.77609 10.4054L0.787109 14L4.48242 13.0354C5.5006 13.5882 6.64685 13.8795 7.81345 13.88H7.81643C11.658 13.88 14.7855 10.7674 14.7871 6.94258C14.7878 5.08877 14.0632 3.34577 12.7473 2.03455C11.4311 0.723324 9.68106 0.000800136 7.81643 0C3.97403 0 0.847151 3.11193 0.845543 6.93698L0.845661 6.9372ZM3.04613 10.2241L2.90819 10.006C2.32815 9.08795 2.02201 8.02689 2.02243 6.9375C2.0237 3.75836 4.62267 1.17172 7.81847 1.17172C9.36608 1.17232 10.8206 1.77296 11.9146 2.86273C13.0086 3.95257 13.6105 5.40136 13.6101 6.94202C13.6087 10.1214 11.0097 12.7082 7.81628 12.7082H7.81402C6.77422 12.7076 5.75448 12.4297 4.86516 11.9044L4.6535 11.7795L2.46054 12.3518L3.04613 10.2241ZM7.81643 13.88H7.8165H7.81643C7.81636 13.88 7.81629 13.88 7.81643 13.88Z"
+                                                        fill="#D5E15D" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6.17482 3.60039C6.02301 3.30931 5.86328 3.30349 5.71889 3.29837C5.60073 3.29403 5.46558 3.29432 5.33059 3.29432C5.19543 3.29432 4.97592 3.33806 4.7903 3.51296C4.60451 3.68787 4.08105 4.11067 4.08105 4.97056C4.08105 5.83054 4.80722 6.66147 4.90839 6.7782C5.00973 6.89471 6.31016 8.7158 8.36952 9.41632C10.0812 9.99853 10.4295 9.88273 10.801 9.85356C11.1725 9.82446 11.9998 9.4309 12.1686 9.02276C12.3375 8.61468 12.3375 8.26487 12.2869 8.19182C12.2362 8.11899 12.1011 8.07524 11.8985 7.9879C11.6958 7.90048 10.6996 7.47761 10.5139 7.41928C10.3281 7.36102 10.1931 7.33193 10.0579 7.50691C9.92284 7.68168 9.53478 8.07524 9.41653 8.19183C9.29836 8.30862 9.18011 8.32321 8.9775 8.23579C8.77481 8.14808 8.12221 7.96371 7.34805 7.36835C6.74568 6.90509 6.33905 6.33298 6.2208 6.15799C6.10263 5.98322 6.20818 5.88855 6.30977 5.80141C6.40081 5.72309 6.51246 5.59734 6.61381 5.49533C6.71491 5.39326 6.74864 5.32042 6.81617 5.20384C6.88379 5.08718 6.84998 4.98511 6.79935 4.89768C6.74864 4.81026 6.35487 3.94595 6.1747 3.60034"
+                                                        fill="#D5E15D" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="pack">
+                            <div class="pack__self">
+                                <div class="pack__self-img">
+                                    <img src="./assets/packs/standart.png" alt="pack">
+                                </div>
+                                <div class="pack-wrp-border">
+                                    <h3 class="pack__self-name">Видео-конференции с доктором</h3>
+                                    <ul class="pack__self-advShort">
+                                        <li>
+                                            <p class="pack__self-descript">
+                                                Проходите программу под ЛИЧНЫМ руководством доктора и помощницы
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p class="pack__self-descript">
+                                                Поддержка в чате VK, Telegram и WhatsApp
+                                            </p>
+
+                                        </li>
+                                        <li>
+                                            <p class="pack__self-descript">
+                                                Личные вопросы доктору
+                                            </p>
+
+                                        </li>
+                                    </ul>
+
+
+                                    <div class="pack__self-price">
+                                        <p class="pack__self-price-data col-bl">39 800
+                                        </p>
+                                        <a href="#" class="pack__self-price-buy">купить <img
+                                                src="./assets/ui/basket.svg" alt="basket"></a>
+                                    </div>
+
+                                    <div class="pack__self-adv">
+                                        <p class="pack__self-adv-days">60 дней</p>
+                                        <ul class="pack__self-adv-icons">
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <mask id="mask0_15_45" style="mask-type:alpha"
+                                                        maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                                        <rect width="20" height="20" fill="url(#pattern0_15_45)" />
+                                                    </mask>
+                                                    <g mask="url(#mask0_15_45)">
+                                                        <rect x="-1" y="-1" width="22.2353" height="22.2353"
+                                                            fill="#26364B" />
+                                                    </g>
+                                                    <defs>
+                                                        <pattern id="pattern0_15_45"
+                                                            patternContentUnits="objectBoundingBox" width="1"
+                                                            height="1">
+                                                            <use xlink:href="#image0_15_45"
+                                                                transform="scale(0.00195312)" />
+                                                        </pattern>
+                                                        <image id="image0_15_45" width="512" height="512"
+                                                            xlink:href="data:image/png;base64,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" />
+                                                    </defs>
+                                                </svg>
+
+
+                                            </li>
+                                            <li class="pack__self-adv-icon"><svg width="17" height="11"
+                                                    viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.1434 10.7272C3.40777 10.7272 0.136313 6.90522 0 0.54541H2.87306C2.96743 5.21335 5.08547 7.1906 6.76316 7.59828V0.54541H9.46856V4.57125C11.1253 4.39799 12.8657 2.56343 13.4529 0.54541H16.1582C15.7073 3.03226 13.8199 4.86682 12.4778 5.62103C13.8199 6.23255 15.9696 7.8327 16.7875 10.7272H13.8094C13.1698 8.79075 11.5762 7.29252 9.46856 7.08868V10.7272H9.1434Z"
+                                                        fill="#269BC7" />
+                                                </svg>
+                                            </li>
+                                            <li class="pack__self-adv-icon">
+                                                <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M1.88261 5.60679C6.17669 3.77797 9.03533 2.56276 10.4708 1.97321C14.5563 0.300794 15.4151 0.0120317 15.9672 0C16.0899 0 16.3598 0.0240637 16.5438 0.168445C16.6911 0.288762 16.7279 0.445175 16.7524 0.565493C16.7769 0.68581 16.8015 0.938476 16.7769 1.13098C16.5561 3.41702 15.5991 8.96365 15.1084 11.5144C14.8998 12.5972 14.4949 12.9582 14.1023 12.9943C13.2435 13.0665 12.5933 12.4408 11.7713 11.9114C10.4708 11.0812 9.74692 10.5639 8.48323 9.74571C7.02324 8.80724 7.96794 8.28987 8.80222 7.44765C9.02306 7.23108 12.7896 3.86219 12.8632 3.5614C12.8755 3.5253 12.8755 3.38092 12.7896 3.30873C12.7037 3.23654 12.581 3.2606 12.4829 3.28467C12.3479 3.30873 10.2867 4.65629 6.27484 7.3153C5.68594 7.71235 5.15838 7.90486 4.6799 7.89283C4.15234 7.88079 3.1463 7.60406 2.38563 7.36343C1.46547 7.07467 0.72934 6.91825 0.790684 6.41292C0.827491 6.14822 1.19555 5.88352 1.88261 5.60679Z"
+                                                        fill="#FF84A0" />
+                                                </svg>
+
+                                            </li>
+                                            <li class="pack__self-adv-icon"><svg width="15" height="14"
+                                                    viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.845661 6.9372C0.845239 8.15979 1.16612 9.35341 1.77609 10.4054L0.787109 14L4.48242 13.0354C5.5006 13.5882 6.64685 13.8795 7.81345 13.88H7.81643C11.658 13.88 14.7855 10.7674 14.7871 6.94258C14.7878 5.08877 14.0632 3.34577 12.7473 2.03455C11.4311 0.723324 9.68106 0.000800136 7.81643 0C3.97403 0 0.847151 3.11193 0.845543 6.93698L0.845661 6.9372ZM3.04613 10.2241L2.90819 10.006C2.32815 9.08795 2.02201 8.02689 2.02243 6.9375C2.0237 3.75836 4.62267 1.17172 7.81847 1.17172C9.36608 1.17232 10.8206 1.77296 11.9146 2.86273C13.0086 3.95257 13.6105 5.40136 13.6101 6.94202C13.6087 10.1214 11.0097 12.7082 7.81628 12.7082H7.81402C6.77422 12.7076 5.75448 12.4297 4.86516 11.9044L4.6535 11.7795L2.46054 12.3518L3.04613 10.2241ZM7.81643 13.88H7.8165H7.81643C7.81636 13.88 7.81629 13.88 7.81643 13.88Z"
+                                                        fill="#D5E15D" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6.17482 3.60039C6.02301 3.30931 5.86328 3.30349 5.71889 3.29837C5.60073 3.29403 5.46558 3.29432 5.33059 3.29432C5.19543 3.29432 4.97592 3.33806 4.7903 3.51296C4.60451 3.68787 4.08105 4.11067 4.08105 4.97056C4.08105 5.83054 4.80722 6.66147 4.90839 6.7782C5.00973 6.89471 6.31016 8.7158 8.36952 9.41632C10.0812 9.99853 10.4295 9.88273 10.801 9.85356C11.1725 9.82446 11.9998 9.4309 12.1686 9.02276C12.3375 8.61468 12.3375 8.26487 12.2869 8.19182C12.2362 8.11899 12.1011 8.07524 11.8985 7.9879C11.6958 7.90048 10.6996 7.47761 10.5139 7.41928C10.3281 7.36102 10.1931 7.33193 10.0579 7.50691C9.92284 7.68168 9.53478 8.07524 9.41653 8.19183C9.29836 8.30862 9.18011 8.32321 8.9775 8.23579C8.77481 8.14808 8.12221 7.96371 7.34805 7.36835C6.74568 6.90509 6.33905 6.33298 6.2208 6.15799C6.10263 5.98322 6.20818 5.88855 6.30977 5.80141C6.40081 5.72309 6.51246 5.59734 6.61381 5.49533C6.71491 5.39326 6.74864 5.32042 6.81617 5.20384C6.88379 5.08718 6.84998 4.98511 6.79935 4.89768C6.74864 4.81026 6.35487 3.94595 6.1747 3.60034"
+                                                        fill="#D5E15D" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="pack__desc-item">
+                            <button class="pack__desc drop-down-action">
+                                <div class="pack__desc-head">
+                                    <p> Подробнее о тарифе</p>
+                                    <img src="./assets/ui/dd-arrow.svg" alt="dd-arrow">
+
+                                </div>
+                            </button>
+
+                            <div class="pack__desc-body ">
+                                <div class="pack__desc-body-c">
+
+                                    <p class="pack__desc-body-name "> <span
+                                            style="background-color: var(--col-green);"></span>
+                                        Тариф ЛАЙТ</p>
+                                    <p class="pack__desc-body-short col-gr">
+                                        Самостоятельное
+                                        прохождение</p>
+                                    <ul class="pack__desc-body-list">
+                                        <li>Анкета Диагностики</li>
+                                        <li>Индивидуальные рекомандации</li>
+                                        <li> Список личных анализов</li>
+                                        <li>Рекомендации по уходу за волосами</li>
+                                        <li> Рекомендации по питанию</li>
+                                        <li> Рекомендации по режиму дня</li>
+                                        <li> Рекомендации по витаминам и БАДам</li>
+                                        <li> Активный список где купить (Активная таблица поиска товаров)</li>
+                                        <li>Таблица совместимости витаминов</li>
+                                        <li>Рецепты домашних масок</li>
+                                        <li> Справочник БАДов</li>
+                                    </ul>
+
+                                    <ul class="pack__desc-body-perks">
+                                        <li class="pack__desc-body-perk pack__desc-body-perk_disabled">
+                                            <img src="./assets/ui/x-red.svg" alt="x">
+                                            <p>Проходите программу под руководством доктора и ее помощницы</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk pack__desc-body-perk_disabled">
+                                            <img src="./assets/ui/x-red.svg" alt="x">
+                                            <p> Поддержка в чате VK, Telegram и WhatsApp</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk pack__desc-body-perk_disabled">
+                                            <img src="./assets/ui/x-red.svg" alt="x">
+                                            <p> Личные вопросы доктору</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk pack__desc-body-perk_disabled">
+                                            <img src="./assets/ui/x-red.svg" alt="x">
+                                            <p>Видеоконференции с доктором</p>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="pack__desc-item">
+                            <button class="pack__desc drop-down-action">
+                                <div class="pack__desc-head">
+                                    <p> Подробнее о тарифе</p>
+                                    <img src="./assets/ui/dd-arrow.svg" alt="dd-arrow">
+
+                                </div>
+                            </button>
+
+                            <div class="pack__desc-body ">
+                                <div class="pack__desc-body-c">
+
+                                    <p class="pack__desc-body-name "> <span
+                                            style="background-color: var(--col-red);"></span> Тариф СТАНДАРТ</p>
+                                    <p class="pack__desc-body-short col-red">
+                                        С поддержкой доктора в чате</p>
+                                    <ul class="pack__desc-body-list">
+                                        <li>Анкета Диагностики</li>
+                                        <li>Индивидуальные рекомандации</li>
+                                        <li> Список личных анализов</li>
+                                        <li>Рекомендации по уходу за волосами</li>
+                                        <li> Рекомендации по питанию</li>
+                                        <li> Рекомендации по режиму дня</li>
+                                        <li> Рекомендации по витаминам и БАДам</li>
+                                        <li> Активный список где купить (Активная таблица поиска товаров)</li>
+                                        <li>Таблица совместимости витаминов</li>
+                                        <li>Рецепты домашних масок</li>
+                                        <li> Справочник БАДов</li>
+                                    </ul>
+
+                                    <ul class="pack__desc-body-perks">
+                                        <li class="pack__desc-body-perk">
+                                            <img src="./assets/ui/v.svg" alt="x">
+                                            <p>Проходите программу под руководством доктора и ее помощницы</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk">
+                                            <img src="./assets/ui/v.svg" alt="x">
+                                            <p> Поддержка в чате VK, Telegram и WhatsApp</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk pack__desc-body-perk_disabled">
+                                            <img src="./assets/ui/x-red.svg" alt="x">
+                                            <p> Личные вопросы доктору</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk pack__desc-body-perk_disabled">
+                                            <img src="./assets/ui/x-red.svg" alt="x">
+                                            <p>Видеоконференции с доктором</p>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="pack__desc-item">
+                            <button class="pack__desc drop-down-action">
+                                <div class="pack__desc-head">
+                                    <p> Подробнее о тарифе</p>
+                                    <img src="./assets/ui/dd-arrow.svg" alt="dd-arrow">
+
+                                </div>
+                            </button>
+
+                            <div class="pack__desc-body ">
+                                <div class="pack__desc-body-c">
+
+                                    <p class="pack__desc-body-name "> <span
+                                            style="background-color: var(--col-blue);"></span> Тариф ПРЕМИУМ</p>
+                                    <p class="pack__desc-body-short col-bl">
+                                        Видео-конференции с доктором</p>
+                                    <ul class="pack__desc-body-list">
+                                        <li>Анкета Диагностики</li>
+                                        <li>Индивидуальные рекомандации</li>
+                                        <li> Список личных анализов</li>
+                                        <li>Рекомендации по уходу за волосами</li>
+                                        <li> Рекомендации по питанию</li>
+                                        <li> Рекомендации по режиму дня</li>
+                                        <li> Рекомендации по витаминам и БАДам</li>
+                                        <li> Активный список где купить (Активная таблица поиска товаров)</li>
+                                        <li>Таблица совместимости витаминов</li>
+                                        <li>Рецепты домашних масок</li>
+                                        <li> Справочник БАДов</li>
+                                    </ul>
+
+                                    <ul class="pack__desc-body-perks">
+                                        <li class="pack__desc-body-perk">
+                                            <img src="./assets/ui/v.svg" alt="x">
+                                            <p>Проходите программу под руководством доктора и ее помощницы</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk">
+                                            <img src="./assets/ui/v.svg" alt="x">
+                                            <p> Поддержка в чате VK, Telegram и WhatsApp</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk">
+                                            <img src="./assets/ui/v.svg" alt="x">
+                                            <p> Личные вопросы доктору</p>
+
+                                        </li>
+                                        <li class="pack__desc-body-perk">
+                                            <img src="./assets/ui/v.svg" alt="x">
+                                            <p>Видеоконференции с доктором</p>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="result">
+            <div class="content-main">
+                <h3 class="section-name"> В результате</h3>
+                <div class="result__c">
+                    <div class="result__c-img">
+                        <picture>
+                            <source media="(min-width: 769px)" srcset="./assets/result.png">
+                            <source media="(max-width: 768px)" srcset="#">
+                            <img src="#" alt="result">
+                        </picture>
+                    </div>
+                    <div>
+                        <p class="result__c-info-head">При соблюдении индивидуальных рекомендаций</p>
+
+                        <p class="result__c-info-body">Происходит комплексное восстановление организма
+                            человека, останавливается и прекращается выпадение волос,
+                            общее самочувствие и качество жизни улучшается</p>
+
+                        <ul class="result__c-info-items">
+                            <li class="result__c-info-item">
+                                <img src="./assets/ui/v.svg" alt="v">
+                                <div class="result__c-info-item-text">
+                                    <p>В течение месяца ваши волосы перестанут выпадать.</p>
+                                    <p>Улучшится цвет лица,
+                                        состояние ЖКТ, кожи и ногтей</p>
+                                </div>
+
+                            </li>
+                            <li class="result__c-info-item">
+                                <img src="./assets/ui/v.svg" alt="v">
+
+
+                                <div class="result__c-info-item-text">
+                                    <p>Предупредите развитие заболеваний
+                                        и патологий в организме.</p>
+                                    <p>Восстановите жизненные силы
+                                        и эмоциональное состояние</p>
+                                </div>
+
+                            </li>
+                            <li class="result__c-info-item">
+                                <img src="./assets/ui/v.svg" alt="v">
+
+
+                                <div class="result__c-info-item-text">
+                                    <p>Научитесь правильному уходу
+                                        за волосами. </p>
+                                    <p>Вернете красоту, объем и сможете отрастить здоровые волосы</p>
+                                </div>
+
+                            </li>
+                            <li class="result__c-info-item">
+                                <img src="./assets/ui/v.svg" alt="v">
+
+
+                                <div class="result__c-info-item-text">
+                                    <p>Качественно улучшится общее состояние здоровья.
+                                    </p>
+                                    <p> Повысится умственнаяи физическая работоспособность</p>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="doctor">
+            <div class="content-main">
+                <div class="doctor__c">
+                    <h2 class="section-head">Врач</h2>
+                    <p class="doctor__c-name">Оксана Тарасянц</p>
+                    <div class="doctor__c-img">
+                        <img src="./assets/doctor.png" alt="doctor">
+                        <div class="doctor__c-yt">
+                            <a href="#" target="_blank" class="yt-btn">
+                                <span class="yt-btn__circle"></span>
+                                Смотреть видео
+                            </a>
+                        </div>
+                    </div>
+                    <p class="col-bl doctor__c-about-job">
+                        Доктор эндокринолог-гинеколог, врач интегративной медицины
+                    </p>
+                    <div class="doctor__c-about">
+                        <p class="doctor__c-about-quote">
+                            Лучшие инвестиции - это здоровье и образование. Мне не безразличны проблемы, с которыми вы
+                            приходите. Я помогаю людям остановить выпадение волос, выяснив основную причину. Мои клиенты
+                            получают ответы на свои вопросы, даже иногда за рамками программы.
+                            Не останавливайтесь в попытках улучшить свое здоровье
+                        </p>
+                        <ul class="doctor__c-about-items">
+                            <li><strong>Категоря</strong></li>
+                            <li>Врач высшей категории</li>
+
+                            <li><strong>Образование:</strong></li>
+                            <li>РУДН, РостГМУ</li>
+
+                            <li><strong>Специализация: </strong></li>
+                            <li>Акушерство и гинекология, эндокринология,
+                                восполнение дефицитных состояний
+                            </li>
+
+                            <li><strong>Опыт работы:</strong></li>
+                            <li>Медицинский стаж 30 лет
+                            </li>
+
+                            <li><strong>Интересные факты:</strong></li>
+                            <li>Эксперт Telegram-канала <a class="col-bl" href="https://t.me/zhenskoe_zdoroviye"
+                                    target="_blank"> Женское здоровье</a></li>
+                        </ul>
+
+                    </div>
+                    <a href="https://t.me/Hair2021Bot" target="_blank" class=" doctor__c-tg btn-gr-bl">Оставить заявку
+                        на
+                        консультацию</a>
+
+                    <div class="docotr__c-about-links">
+                        <a href="https://vk.com/volosy.wbsschool" target="_blank">
+                            <img src="./assets/ui/soc-vk-dark.svg" alt="vk">
+                        </a>
+                        <a href="https://t.me/zhenskoe_zdoroviye" target="_blank">
+                            <img src="./assets/ui/soc-tg-dark.svg" alt="tg">
+                        </a>
+                        <a href="https://dzen.ru/womenbeautyschool" target="_blank">
+                            <img src="./assets/ui/soc-dzen.svg" alt="dzen">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="diploms">
+            <div class="content-main">
+                <div class="diploms__c">
+                    <h2 class="section-head">Дипломы и сертификаты</h2>
+                    <p class="section-body">Уровень квалификации врача, практические навыки и умения</p>
+                    <div class="diploms__c-slider">
+                        <button class="slider-btn slider-btn_left diploms__c-slider-btn diploms__c-slider-btn_left"
+                            data-slideto="0" disabled>
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12L7 6.5L1 1" stroke="#269BC7" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <button class=" slider-btn slider-btn_right diploms__c-slider-btn diploms__c-slider-btn_right"
+                            data-slideto="1">
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12L7 6.5L1 1" stroke="#269BC7" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <div class="diploms__c-slider-wrp">
+                            <ul class="diploms__c-slider-items">
+                                <li class="diploms__c-slider-btn-item"></li>
+                                <li class="diploms__c-slider-btn-item"></li>
+                                <li class="diploms__c-slider-btn-item"></li>
+                                <li class="diploms__c-slider-btn-item"></li>
+                                <li class="diploms__c-slider-btn-item"></li>
+                                <li class="diploms__c-slider-btn-item"></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="effect">
+            <div class="content-main">
+                <div class="effect__c">
+                    <div class="effect__c-info">
+                        <h2 class="section-head">
+                            В чем <span class="col-bl">
+                                эффективность
+                            </span>
+                            комплексного лечения выпадения волос?
+                        </h2>
+                        <p class="section-body">
+                            В оказании совместной врачебной помощи квалифицированными специалистами
+
+                        </p>
+                        <div class="effect__c-info-text">
+                            <p>Мы используем командный подход к решению вашей проблемы, где эксперты: эндокринолог,
+                                нутрициолог, тритментолог и помощник доктора исследуют причину выпадения волос. После
+                                чего результаты ваших анализов попадают в личный кабинет экспертов, где составляются
+                                назначения и формируются в персональную рекомендацию.
+                            </p>
+                            <p>При прохождении программы вы можете получить ответы на свои вопросы в чате поддержки с
+                                доктором. При соблюдении вами полученных рекомендаций после прохождения программы, вы
+                                реализуете свой потенциал для здоровья и благополучия в жизни.
+                            </p>
+                        </div>
+                        <ul class="effect__c-info-precents">
+                            <li class="effect__c-info-precent">
+                                <div class="effect__c-info-precent-circle">
+                                    <p class="effect__c-info-precent-circle-val"></p>
+                                    <canvas class="effect__c-info-precent-circle-canvas" data-precent="85"></canvas>
+                                </div>
+                                <p class="effect__c-info-precent-name">Новых волос</p>
+                            </li>
+                            <li class="effect__c-info-precent">
+                                <div class="effect__c-info-precent-circle">
+                                    <p class="effect__c-info-precent-circle-val"></p>
+                                    <canvas class="effect__c-info-precent-circle-canvas" data-precent="25"></canvas>
+                                </div>
+                                <p class="effect__c-info-precent-name">Волос плотнее
+                                </p>
+                            </li>
+                            <li class="effect__c-info-precent">
+                                <div class="effect__c-info-precent-circle">
+                                    <p class="effect__c-info-precent-circle-val"></p>
+                                    <canvas class="effect__c-info-precent-circle-canvas" data-precent="7"></canvas>
+                                </div>
+                                <p class="effect__c-info-precent-name">Длина волос</p>
+                            </li>
+                            <li class="effect__c-info-precent">
+                                <div class="effect__c-info-precent-circle">
+                                    <p class="effect__c-info-precent-circle-val"></p>
+                                    <canvas class="effect__c-info-precent-circle-canvas" data-precent="50"></canvas>
+                                </div>
+                                <p class="effect__c-info-precent-name">рН кожи головы</p>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="effect__c-img">
+                        <picture>
+                            <source media="(min-width: 851px)" srcset="./assets/effect.png">
+                            <source media="(max-width: 850px)" srcset="#">
+                            <img src="#" alt="effect">
+                        </picture>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="faq" id="secFaq">
+            <div class="content-main">
+                <div class="faq__c">
+                    <h2 class="section-head">Ответы на главные вопросы</h2>
+                    <p class="section-body">Нужно знать</p>
+                    <ul class="faq__c-list">
+                        <li class="drop-down drop-down-action">
+                            <button class="drop-down__btn ">
+                                <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                            </button>
+                            <p class="drop-down__text">Кто лечит выпадение волос?</p>
+                            <div class="drop-down__wrp">
+                                <div class="drop-down__wrp-c">
+                                    <p>Эндокринолог, нутрициолог, тритментолог, трихолог</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="drop-down drop-down-action">
+                            <button class="drop-down__btn ">
+                                <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                            </button>
+                            <p class="drop-down__text">Почему эндокринолог лечит выпадение волос?
+                            </p>
+                            <div class="drop-down__wrp">
+                                <div class="drop-down__wrp-c">
+                                    <p>Эндокринолог лечит причину выпадения волос, изучает
+                                        заболевания, последствиями которых являются: повышенная утомляемость, депрессия,
+                                        раздражительность, гормональный
+                                        сбой и т.д. Эти симптомы связаны с заболеваниями щитовидной железы,
+                                        инсулинорезистентностью, с неправильным
+                                        воздействием гормонов на организм, гипотиреозом,
+                                        гипертиреозом, аутоиммунным тиреоидитом и т.д.
+                                        После обследования доктор дает назначения для
+                                        лечения выпадения волос.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="drop-down drop-down-action">
+                            <button class="drop-down__btn ">
+                                <img src="./assets/ui/arrow-full.svg" alt="arrow-full">
+                            </button>
+                            <p class="drop-down__text">Почему выпадение волос лечат доктора, а не косметологи?</p>
+                            <div class="drop-down__wrp">
+                                <div class="drop-down__wrp-c">
+                                    <p>Выпадение волос - это последствие заболеваний, стресса и т.д. Решать проблему
+                                        нужно изнутри организма и комплексно</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="reviews" id="#secReviews">
+            <div class="content-main">
+                <div class="reviews__c">
+                    <div class="reviews__c-head">
+                        <h2 class="section-head">
+                            Что говорят наши
+                            клиенты о нас
+                        </h2>
+
+                    </div>
+                    <div class="reviews__c-list">
+                        <button class="slider-btn slider-btn_left reviews__c-list-btn " data-slideto="0" disabled>
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12L7 6.5L1 1" stroke="#269BC7" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <button class="slider-btn slider-btn_right  reviews__c-list-btn" data-slideto="1">
+                            <svg width="9" height="13" viewBox="0 0 9 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12L7 6.5L1 1" stroke="#269BC7" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <div class="reviews__c-items-wrp">
+                            <ul class="reviews__c-items">
+                                <li class="reviews__c-item">
+                                    <div class="reviews__c-item-icon">
+                                        <svg width="46" height="45" viewBox="0 0 46 45" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="45" height="45" rx="7" fill="#269BC7" />
+                                            <path
+                                                d="M23.72 30.256L23.336 29.552C23.72 28.016 24.2107 26.3947 24.808 24.688C25.4053 22.9813 26.0453 21.2533 26.728 19.504C27.4533 17.7547 28.1573 16.112 28.84 14.576H33.064C32.68 16.2827 32.2747 18.0747 31.848 19.952C31.464 21.7867 31.1013 23.6 30.76 25.392C30.4613 27.1413 30.2053 28.7627 29.992 30.256H23.72ZM11.688 30.256L11.304 29.552C11.688 28.016 12.1787 26.3947 12.776 24.688C13.3733 22.9813 14.0133 21.2533 14.696 19.504C15.4213 17.7547 16.1253 16.112 16.808 14.576H21.032C20.648 16.2827 20.2427 18.0747 19.816 19.952C19.432 21.7867 19.0693 23.6 18.728 25.392C18.4293 27.1413 18.1733 28.7627 17.96 30.256H11.688Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </div>
+                                    <div class="reviews__c-comment-wrp">
+                                        <p class="reviews__c-item-commentary">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing
+                                            elit. Quaerat soluta rem eveniet
+                                            debitis tenetur veniam amet pariatur recusandae omnis ipsum totam,
+                                            voluptatum
+                                            nulla
+                                            perferendis illum nam suscipit in dignissimos delectus cumque molestiae
+                                            ipsam
+                                            iste!
+                                            Expedita adipisci itaque porro id accusamus dolores fugiat quis asperiores
+                                            aperiam
+                                            atque. Repellendus hic veritatis magnam qui id earum, minus modi aperiam
+                                            amet
+                                            voluptatum
+                                            dolore fuga commodi atque, iste debitis, sunt quae? Repellat eligendi neque
+                                            fugit
+                                            dolorum, beatae adipisci itaque molestias voluptas veniam alias accusantium
+                                            praesentium
+                                            error, ratione, perferendis eum? Nostrum ipsum ut, maxime molestiae dolore
+                                            laudantium
+                                            eius commodi fugit vel quis debitis dolorum in delectus. Lorem ipsum dolor
+                                            sit amet consectetur
+                                            adipisicing
+                                            elit. Quaerat soluta rem eveniet
+                                            debitis tenetur veniam amet pariatur recusandae omnis ipsum totam,
+                                            voluptatum
+                                            nulla
+                                            perferendis illum nam suscipit in dignissimos delectus cumque molestiae
+                                            ipsam
+                                            iste!
+                                            Expedita adipisci itaque porro id accusamus dolores fugiat quis asperiores
+                                            aperiam
+                                            atque. Repellendus hic veritatis magnam qui id earum, minus modi aperiam
+                                            amet
+                                            voluptatum
+                                            dolore fuga commodi atque, iste debitis, sunt quae? Repellat eligendi neque
+                                            fugit
+                                            dolorum, beatae adipisci itaque molestias voluptas veniam alias accusantium
+                                            praesentium
+                                            error, ratione, perferendis eum? Nostrum ipsum ut, maxime molestiae dolore
+                                            laudantium
+                                            eius commodi fugit vel quis debitis dolorum in delectus. 
+                                    </div>
+
+
+
+                                    <div class="review__c-item-author">
+                                        <div class="review__c-item-author-img">
+
+                                        </div>
+                                        <p class="review__c-item-author-name">LEEEEEEEEEEEEEEENA
+                                            poleeeeeeeeeeeeeeeeeeeeeeeeno</p>
+                                        <p class="review__c-item-author-status">mooooooooooooother of 3
+                                            chiiiiiiiiiiiiiiiiild
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="reviews__c-item">
+                                    <div class="reviews__c-item-icon">
+                                        <svg width="46" height="45" viewBox="0 0 46 45" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="45" height="45" rx="7" fill="#269BC7" />
+                                            <path
+                                                d="M23.72 30.256L23.336 29.552C23.72 28.016 24.2107 26.3947 24.808 24.688C25.4053 22.9813 26.0453 21.2533 26.728 19.504C27.4533 17.7547 28.1573 16.112 28.84 14.576H33.064C32.68 16.2827 32.2747 18.0747 31.848 19.952C31.464 21.7867 31.1013 23.6 30.76 25.392C30.4613 27.1413 30.2053 28.7627 29.992 30.256H23.72ZM11.688 30.256L11.304 29.552C11.688 28.016 12.1787 26.3947 12.776 24.688C13.3733 22.9813 14.0133 21.2533 14.696 19.504C15.4213 17.7547 16.1253 16.112 16.808 14.576H21.032C20.648 16.2827 20.2427 18.0747 19.816 19.952C19.432 21.7867 19.0693 23.6 18.728 25.392C18.4293 27.1413 18.1733 28.7627 17.96 30.256H11.688Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </div>
+                                    <div class="reviews__c-comment-wrp">
+                                        <p class="reviews__c-item-commentary">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing
+                                            elit. Quaerat soluta rem eveniet
+                                            debitis tenetur veniam amet pariatur recusandae omnis ipsum totam,
+                                            voluptatum
+                                            nulla
+                                            perferendis illum nam suscipit in dignissimos delectus cumque molestiae
+                                            ipsam
+                                            iste!
+                                            Expedita adipisci itaque porro id accusamus dolores fugiat quis asperiores
+                                            aperiam
+                                            atque. Repellendus hic veritatis magnam qui id earum, minus modi aperiam
+                                            amet
+                                            voluptatum
+                                            dolore fuga commodi atque, iste debitis, sunt quae? Repellat eligendi neque
+                                            fugit
+                                            dolorum, beatae adipisci itaque molestias voluptas veniam alias accusantium
+                                            praesentium
+                                            error, ratione, perferendis eum? Nostrum ipsum ut, maxime molestiae dolore
+                                            laudantium
+                                            eius commodi fugit vel quis debitis dolorum in delectus. Lorem ipsum dolor
+                                            sit amet consectetur
+                                            adipisicing
+                                            elit. Quaerat soluta rem eveniet
+                                            debitis tenetur veniam amet pariatur recusandae omnis ipsum totam,
+                                            voluptatum
+                                            nulla
+                                            perferendis illum nam suscipit in dignissimos delectus cumque molestiae
+                                            ipsam
+                                            iste!
+                                            Expedita adipisci itaque porro id accusamus dolores fugiat quis asperiores
+                                            aperiam
+                                            atque. Repellendus hic veritatis magnam qui id earum, minus modi aperiam
+                                            amet
+                                            voluptatum
+                                            dolore fuga commodi atque, iste debitis, sunt quae? Repellat eligendi neque
+                                            fugit
+                                            dolorum, beatae adipisci itaque molestias voluptas veniam alias accusantium
+                                            praesentium
+                                            error, ratione, perferendis eum? Nostrum ipsum ut, maxime molestiae dolore
+                                            laudantium
+                                            eius commodi fugit vel quis debitis dolorum in delectus. 
+                                    </div>
+
+
+
+                                    <div class="review__c-item-author">
+                                        <div class="review__c-item-author-img">
+
+                                        </div>
+                                        <p class="review__c-item-author-name">LEEEEEEEEEEEEEEENA
+                                            poleeeeeeeeeeeeeeeeeeeeeeeeno</p>
+                                        <p class="review__c-item-author-status">mooooooooooooother of 3
+                                            chiiiiiiiiiiiiiiiiild
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="payment">
+            <div class="content-main">
+                <div class="payment__c">
+                    <div class="payment__c-desc">
+                        <h2 class="section-head">Стоимость курса</h2>
+                        <div class="payment__c-desc-img">
+                            <img src="./assets/payment/lite.png" alt="lite">
+                        </div>
+                        <p class="payment__c-desc-text-big">
+                            Рассрочка по тарифу от 1000 ₽ / мес
+                        </p>
+                        <p class="payment__c-desc-text-small">1. волосы перестанут выпадать через 1 месяц </p>
+                        <p class="payment__c-desc-text-small">2. индивидуальная программа рекомендаций </p>
+                        <p class="payment__c-desc-text-small">3. оплата в рассрочку на 6, 9 и 12 месяцев</p>
+
+                        <p class="payment__c-desc-text-big">
+                            Выберите подходящий тариф
+                        </p>
+                        <div class="payment__c-desc-btns">
+                            <button disabled class="payment__c-desc-btn payment__c-desc-btn_light">лайт</button>
+                            <button class="payment__c-desc-btn payment__c-desc-btn_standart">стандарт</button>
+                            <button class="payment__c-desc-btn payment__c-desc-btn_prem">премиум</button>
+                        </div>
+                    </div>
+
+                    <form class="payment__c-form">
+                        <p class="section-head">
+                            Ваш тариф: <span class="payment__c-form-name">Лайт</span>
+                        </p>
+                        <p class="payment__c-form-big-text">Стоимость выбранного курса <span
+                                class="payment__c-form-price">14 950</span> ₽ </p>
+                        <p class="section-body">подробнее о тарифе</p>
+                        <div class="payment__c-form-b">
+                            <p class="payment__c-form-big-text">Шаг первый. Выберите способ оплаты</p>
+                            <div class="payment__c-form-pay">
+                                <label>
+                                    <input  type="radio" required name="payment" value="card">
+                                    <span></span>
+                                    По карте
+                                </label>
+                                <label>
+                                    <input type="radio" required name="payment" value="kredit">
+                                    <span></span>
+                                    В рассрочку
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="payment__c-form-b ">
+                            <p class="payment__c-form-big-text">Шаг второй. Заполните данные о плательщике</p>
+                            <div class="payment__c-form-userData">
+                                <input class="" type="text" placeholder="Фамилия и имя плательщика" required>
+                                <input type="email" placeholder="email" required>
+                                <input type="text" placeholder="+7 900 000 00 00" required>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn-gr-bl ">Оплатить</button>
+
+                        <div class="payment__c-from-checkbox">
+                            <input type="checkbox" required>
+                            <p>
+                                нажимая Оплатить, вы соглашаетесь с <a href="#" class="col-bl">Политикой</a> и <a
+                                    href="#" class="col-bl">Офертой</a>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="about" id="secAbout">
+            <div class="content-main">
+                <div class="about__c">
+                    <div>
+                        <h3 class="section-name"> О нас</h3>
+                        <h2 class="section-head about__head">Наши контакты</h2>
+                        <ul class="about__c-items">
+                            <li>
+
+                                <a href="https://wa.me/message/D44A6NYCZOSFA1" target="_blank" class="about__c-item">
+                                    <img src="./assets/ui/soc-wa-dark.svg" alt="wa">
+                                    Напишите в WhatsApp
+                                    <div class="about__c-item-bg"></div>
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="https://t.me/zhenskoe_zdoroviye" target="_blank" class="about__c-item">
+                                    <img src="./assets/ui/info.svg" alt="info">
+                                    Информация для клиентов
+                                    <div class="about__c-item-bg"></div>
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="https://t.me/Hair2021Bot" target="_blank" class="about__c-item">
+                                    <img src="./assets/ui/soc-tg-grey.svg" alt="wa">
+                                    Напишите в Telegram
+                                    <div class="about__c-item-bg"></div>
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="" target="_blank" class="about__c-item">
+                                    <img src="./assets/ui/location.svg" alt="wa">
+                                    г.Ростов-на-Дону
+                                    <div class="about__c-item-bg"></div>
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="tel:89286009691" target="_blank" class="about__c-item col-bl">
+                                    <img src="./assets/ui/telephone-blue.svg" alt="wa">
+                                    +7(928) 600-96-91
+                                    <div class="about__c-item-bg"></div>
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="mailto:mail@volosy.wbsschool.ru" target="_blank" class="about__c-item">
+                                    <img src="./assets/ui/mail.svg" alt="wa">
+                                    mail@volosy.wbsschool.ru
+                                    <div class="about__c-item-bg"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about__c-map">
+                        iframe map
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="news">
+            <div class="content-main">
+                <h2 class="section-head">Статьи</h2>
+
+                <ul class="news__c-items">
+                    <li class="news__c-item news__c-item_small">
+                        <div class="news__c-item-img">
+                            <a href="#">
+                                <img src="https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?t=st=1723734866~exp=1723738466~hmac=cf976ad1b41da32a11f1eb698d97050fc13d5883f0c3cd7867fc694c8ed74b38&w=1380"
+                                    alt="img">
+                            </a>
+                        </div>
+
+                        <div class="news__c-item-text">
+                            <a href="#" class="news__c-item-text-big">
+                                Могут ли выпадать волосы из-за нехватки витамина Д?
+                            </a>
+                            <p class="news__c-item-text-small">
+                                Дефицит витамина Д нарушает цикл волосяных фолликулов и влияет на..
+                            </p>
+                            <span class="news__c-item-text-line"></span>
+                            <div class="news__c-item-text-quote">
+                                <p class="news__c-item-text-big">Оксана Тарасянц</p>
+                                <a href="#" class="news__c-item-link col-bl">Подробнее</a>
+                                <p class="news__c-item-text-small">врач эндокринолог</p>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="news__c-item news__c-item_big">
+                        <div class="news__c-item-img">
+                            <a href="#">
+                                <img src="https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?t=st=1723734866~exp=1723738466~hmac=cf976ad1b41da32a11f1eb698d97050fc13d5883f0c3cd7867fc694c8ed74b38&w=1380"
+                                    alt="img">
+                            </a>
+                        </div>
+                        <div class="news__c-item-text">
+                            <a href="#" class="news__c-item-text-big">
+                                Могут ли выпадать волосы из-за нехватки витамина Д?
+                            </a>
+                            <p class="news__c-item-text-small">
+                                Дефицит витамина Д нарушает цикл волосяных фолликулов и влияет на..
+                            </p>
+                            <span class="news__c-item-text-line"></span>
+                            <div class="news__c-item-text-quote">
+                                <p class="news__c-item-text-big">Оксана Тарасянц</p>
+                                <a href="#" class="news__c-item-link col-bl">Подробнее</a>
+                                <p class="news__c-item-text-small">врач эндокринолог</p>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <section class="spam">
+            <div class="content-main">
+                <div class="spam__c">
+                    <img class="spam__c-img" src="./assets/ui/spam.svg" alt="spam">
+                    <p class="spam__c-text">Подпишитесь на рассылку, чтобы найти ответы о причине выпадения ваших волос
+                    </p>
+                    <form class="spam__c-form">
+                        <input type="email" name="email" placeholder="email">
+                        <button type="submit" class="btn-gr-bl">Подписаться</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <div class="content-main">
+            <div class="footer">
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <img src="./assets/logo-white.svg" alt="WBS">
+                        <h2 class="header__slogan">школа&bull;Женской&bull;красоты</h2>
+                    </div>
+                    <p class="footer__left-quote">Повседневная практика показывает, что сплочённость команды
+                        профессионалов создаёт предпосылки для экономической целесообразности принимаемых решений
+                    </p>
+
+                    <form class="footer__left-form">
+                        <input type="email" placeholder="email" required>
+                        <button type="submit">Подписаться</button>
+                    </form>
+                </div>
+                <ul class="footer__grid">
+                    <li class="footer__grid-el ">
+                        <button class="footer__grid-el-dd drop-down-action   ">
+                            Помощь
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5.64645 5.64645C5.84171 5.84171 6.15829 5.84171 6.35355 5.64645L11 1"
+                                    stroke="var(--col-grey)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+
+                        </button>
+                        <div class="footer__grid-el-wrp">
+                            <ul class="footer__grid-el-links">
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Вопросы и ответы</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Отзывы</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Задать вопрос</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="footer__grid-el ">
+                        <button class="footer__grid-el-dd drop-down-action ">
+                            О нас
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5.64645 5.64645C5.84171 5.84171 6.15829 5.84171 6.35355 5.64645L11 1"
+                                    stroke="var(--col-grey)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+
+                        </button>
+                        <div class="footer__grid-el-wrp">
+                            <ul class="footer__grid-el-links">
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Наши врачи</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Лицензии и сертификаты</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Новости</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Телеграм</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Вконтакте</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Яндекс Дзен </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="footer__grid-el ">
+                        <button class="footer__grid-el-dd drop-down-action ">
+                            Контакты
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5.64645 5.64645C5.84171 5.84171 6.15829 5.84171 6.35355 5.64645L11 1"
+                                    stroke="var(--col-grey)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+
+                        </button>
+                        <div class="footer__grid-el-wrp">
+                            <ul class="footer__grid-el-links">
+                                <li class="footer__grid-el-link">
+                                    <a href="tel:89286009691">+7(928) 600-96-91</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="emailto:help.wbs@yandex.ru">help.wbs@yandex.ru</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="footer__grid-el ">
+                        <button class="footer__grid-el-dd drop-down-action ">
+                            Цены
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5.64645 5.64645C5.84171 5.84171 6.15829 5.84171 6.35355 5.64645L11 1"
+                                    stroke="var(--col-grey)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+
+                        </button>
+                        <div class="footer__grid-el-wrp">
+                            <ul class="footer__grid-el-links">
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Тариф Лайт</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Тариф Стандарт</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Тариф Премиум</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="footer__grid-el ">
+                        <button class="footer__grid-el-dd drop-down-action ">
+                            Работайте с нами
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5.64645 5.64645C5.84171 5.84171 6.15829 5.84171 6.35355 5.64645L11 1"
+                                    stroke="var(--col-grey)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+
+                        </button>
+                        <div class="footer__grid-el-wrp">
+                            <ul class="footer__grid-el-links">
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Для врачей</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Вакансии</a>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="footer__grid-el ">
+                        <button class="footer__grid-el-dd drop-down-action ">
+                            Наши документы
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5.64645 5.64645C5.84171 5.84171 6.15829 5.84171 6.35355 5.64645L11 1"
+                                    stroke="var(--col-grey)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+
+                        </button>
+                        <div class="footer__grid-el-wrp">
+                            <ul class="footer__grid-el-links">
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Политика конфиденциальности </a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Публичная оферта</a>
+                                </li>
+                                <li class="footer__grid-el-link">
+                                    <a href="#">Реквизиты</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

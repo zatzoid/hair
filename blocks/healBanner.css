@@ -1,0 +1,112 @@
+.healBanner {
+    padding: 40px 0;
+    box-sizing: border-box;
+    background-image: url(../assets/healBanner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.healBanner__c {
+    background-color: var(--col-red);
+    color: var(--col-white);
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 585px;
+}
+
+.healBanner__c-name {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+
+}
+
+.healBanner__c-head {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: left;
+    margin: 7px 0 30px;
+
+}
+
+.healBanner__c-text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: left;
+
+}
+
+.healBanner__c-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+
+.healBanner__c-bottom-call {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30.5px;
+    text-align: left;
+
+}
+
+.healBanner__c-bottom-call-link {
+    font-family: Montserrat;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0.005em;
+    text-align: left;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.healBanner__c-social {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.healBanner__c-social-link img {
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .healBanner{
+        background-image: none;
+        background-color: var(--col-grey);
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    .healBanner__c-head{
+        font-size: 24px;
+        line-height: 30px;
+          
+    }
+    .healBanner__c-social-link img{
+        width: 30px;
+        height: 30px;
+    }
+    .healBanner__c-bottom{
+        flex-direction: column;
+    }
+    .healBanner__c-social{
+        margin-left: auto;
+    }
+
+    
+}

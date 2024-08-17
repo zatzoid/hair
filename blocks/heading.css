@@ -1,0 +1,227 @@
+.heading {
+    box-sizing: border-box;
+    padding: 90px 0 111px;
+    background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%);
+    color: var(--col-black);
+}
+
+.heading__content {
+    display: flex;
+    flex-direction: column;
+    color: var(--col-black);
+    max-width: 717px;
+}
+
+.heading__head {
+    font-family: Montserrat;
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 57.5px;
+    letter-spacing: -0.005em;
+
+
+}
+
+.heading__subhead {
+    font-family: Inter;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0.005em;
+    text-align: left;
+    text-wrap: nowrap;
+    margin: 30px 0;
+
+}
+
+.heading__items {}
+
+.heading__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: 0.005em;
+    text-align: left;
+    text-decoration: none;
+}
+
+.heading__yt {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+.heading__dd {
+    background-color: var(--col-white);
+    border: 2px solid var(--col-grey-light);
+    border-bottom: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 17px 26px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0fr;
+    gap: 5px 20px;
+    margin-top: 13px;
+    position: relative;
+    z-index: 2;
+}
+
+.heading__db-left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.heading__db-left-sub {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--col-grey);
+    margin-bottom: 5px;
+}
+
+.heading__db-left-name {
+    color: var(--col-black);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+
+.heading__dd-left-arrow {
+    transition: all .5s;
+}
+
+.drop-down-action_opened .heading__dd-left-arrow {
+    transform: rotate(180deg);
+}
+
+.heading__dd-menu {
+    position: absolute;
+    z-index: 1;
+    top: 85%;
+    left: -2px;
+    width: calc(100% + 4px);
+    border: 2px solid var(--col-grey-light);
+    border-top: none;
+    box-sizing: border-box;
+    background-color: var(--col-white);
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    max-height: 20px;
+    transition: all .5s;
+
+
+}
+
+.heading__dd-menu-item {
+    box-sizing: border-box;
+    padding: 15px 40px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--col-grey-light);
+
+
+}
+.heading__dd-menu-item:first-of-type{
+    margin-top: 20px;
+    border-top: 2px solid var(--col-grey-light);
+}
+
+.drop-down-action_opened~.heading__dd-menu {
+    max-height: 100vh;
+}
+
+.heading__link {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .heading {
+        padding: 30px 0 60px;
+
+    }
+
+    .heading__head {
+
+        font-size: 32px;
+        line-height: 40.5px;
+        max-width: 400px;
+
+    }
+
+    .heading__subhead {
+        font-size: 20px;
+        line-height: 24px;
+        text-wrap: wrap;
+        margin: 15px 0;
+    }
+
+    .heading__items {
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .heading__item {
+        font-size: 17px;
+        line-height: 20px;
+
+    }
+
+    .heading__yt {
+        justify-content: center;
+        margin: 12px;
+    }
+
+    .heading__dd {
+        display: flex;
+    }
+
+    .heading__dd-link {
+        display: none;
+    }
+
+    .heading__link {
+        display: block;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .heading__subhead {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .heading__head {
+        font-size: 32px;
+        line-height: 38.5px;
+
+    }
+
+    .heading__item {
+        align-items: flex-start;
+        font-size: 14px;
+        line-height: 20px;
+
+    }
+
+}

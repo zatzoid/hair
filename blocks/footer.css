@@ -1,0 +1,150 @@
+footer {
+    background-color: var(--col-blue-dark);
+    padding: 60px 0;
+    color: var(--col-grey);
+    min-height: 600px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 50px;
+}
+
+.footer__left {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.footer__logo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer__logo img {
+    width: 70px;
+}
+
+
+.footer__left-quote {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.4px;
+    letter-spacing: -0.005em;
+    text-align: left;
+
+}
+
+.footer__left-form {
+    display: flex;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.footer__left-form input {
+    border: 2px solid var(--col-grey);
+    border-right: none;
+    background-color: transparent;
+    border-radius: 15px 0 0 15px;
+    color: var(--col-white);
+}
+
+.footer__left-form button {
+    background-color: var(--col-white);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: left;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer__grid-el {}
+
+.footer__grid-el-dd {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--col-grey);
+    cursor: pointer;
+    padding: 0;
+
+
+}
+
+.drop-down-action_opened {
+    color: var(--col-white);
+}
+
+.footer__grid-el-dd svg {
+    transform: rotate(180deg);
+    transition: all .5s;
+}
+
+.drop-down-action_opened svg {
+    transform: rotate(0);
+}
+
+.drop-down-action_opened svg path {
+
+    stroke: var(--col-white);
+}
+
+.footer__grid-el-wrp {
+    overflow: hidden;
+    max-height: 0;
+    transition: all .5s;
+}
+
+.drop-down-action_opened+.footer__grid-el-wrp {
+    max-height: 100vh;
+}
+
+
+.footer__grid-el-links {
+
+    background-color: var(--col-blue-dark);
+}
+
+.footer__grid-el-link {
+    margin-top: 15px;
+}
+.footer__grid-el-link  a{
+    text-decoration: none;
+
+}
+
+@media screen and (max-width: 950px) {
+    .footer{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer__grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 0;
+    }
+    .footer__left-form{
+        width: 100%;
+    }
+    .footer__left-form input{
+        width: 100%;
+    }
+}

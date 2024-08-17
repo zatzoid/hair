@@ -1,0 +1,140 @@
+.modal {
+    background-color: rgba(3, 3, 3, 0.51);
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-c {
+    background-color: var(--col-white);
+    color: var(--col-black);
+    position: relative;
+    padding: 46px;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.modal-c-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 46px;
+    border: none;
+    background-color: var(--col-grey-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+
+}
+
+/* 
+DISCUNT
+*/
+.modal__discount {
+    display: flex;
+    color: var(--col-black);
+    max-width: 650px;
+}
+
+.modal__discount-form-head {
+    font-family: Montserrat;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 36.01px;
+    letter-spacing: -0.005em;
+    text-align: left;
+
+}
+
+.modal__discount-form-head span {
+    padding: 5px 5px;
+    border-radius: 50px;
+    background-color: rgba(228, 240, 106, 1);
+
+}
+
+.modal__discount-form-body {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.8px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    color: var(--col-grey);
+    margin: 18px 0 28px;
+}
+
+.modal__discount-form-input {
+    background-color: rgba(246, 246, 244, 1);
+    border: 2px solid rgba(235, 236, 243, 1);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.modal__discount-form-submit {}
+
+.modal__discount-form-subs {
+    margin-top: 20px;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    color: var(--col-grey);
+}
+
+.modal__discount-form-subs a {
+    color: var(--col-grey);
+}
+
+.modal__discount-img {
+    object-fit: contain;
+    object-position: top;
+    min-width: 300px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .modal-c {
+        padding: 25px;
+    }
+
+    .modal-c-close {
+        top: 15px;
+        right: 15px;
+    }
+.modal__discount{
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+.modal__discount-img{
+    min-width: 0;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+}
+.modal__discount-form-head{
+    font-size: 20px;
+    font-weight: 23px;
+}
+   
+
+}
