@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* heal slider */
+     //секционный слайдер
     const healSliderMain = $('.heal__c')
     const healSliderSelf = $('.heal__c-slides')
     const healSliderIndication = $('.heal__c-btn-indication')
@@ -29,6 +30,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* pack slider */
+     //секционный слайдер
     const packSliderMain = $('.packs')
     const packSliderSelf = packSliderMain.find('.packs__items')
     const packLeftBtn = packSliderMain.find('.slider-btn_left')
@@ -43,6 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* reviews slider */
+     //секционный слайдер
     const reviewsSliderMain = $('.reviews')
     const reviewsSliderSelf = reviewsSliderMain.find('.reviews__c-items')
     const reviewsLeftBtn = reviewsSliderMain.find('.slider-btn_left')
@@ -58,6 +61,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* modal close */
+    //все элементы с нужным стилем
     $('.modal-action-close').on('click', (e) => {
         $(e.currentTarget.closest('.modal-main')).hide()
     })
@@ -73,6 +77,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /*canvas */
+    //эффект при достижении секции видимой области
     let workLinesIsDrawed = false
     let effectCirclesIsDrawed = false
 
@@ -104,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function () {
     /*canvas */
 
     /* payment */
-
+    //секционный слайдер
     const payMain = $('.payment')
     const payBtns = payMain.find('.payment__c-desc-btn')
     const payImg = payMain.find('.payment__c-desc-img-data')
@@ -134,22 +139,27 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* diploms */
+    //слайдер через скролл wrp блока
     const diplomSliderMain = $('.diploms__c')
     const diplomsSliderWrapper = document.querySelector('.diploms__c-slider-wrp')
-    const diplomSliderSelf = $('.diploms__c-slider-items')
     const diplomLeftBtn = diplomSliderMain.find('.slider-btn_left')
     const diplomRightBtn = diplomSliderMain.find('.slider-btn_right')
 
-    diplomRightBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf) })
-    diplomLeftBtn.on('click', (e) => {
-        diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper, diplomSliderSelf)
+    diplomRightBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper) })
+    diplomLeftBtn.on('click', (e) => { diplomSlider(e, diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper) })
+    diplomsSliderWrapper.addEventListener('scroll', () => {
+        diplomCheckScroll(diplomLeftBtn, diplomRightBtn, diplomsSliderWrapper)
     })
-    diplomsSliderWrapper.addEventListener('scroll', (e) => {
-        console.log(e.currentTarget.scrollLeft, e.currentTarget.offsetWidth, diplomSliderSelf.width());
+    /* diploms */
 
-        diplomCheckScroll(diplomLeftBtn, diplomRightBtn, scrollVal, diplomSliderSelf.width())
+
+
+
+    $(window).resize(() => {
+        packSliderSelf.css({ transform: 'translateX(0px)' })
+        healSliderSelf.css({ transform: 'translateX(0px)' })
+        reviewsSliderSelf.css({ transform: 'translateX(0px)' })
     })
-
 
 }, false);
 
@@ -234,8 +244,6 @@ function sectionSlider(e, type, leftbtn, rightBtn, container, max, gap = 0) {
 }
 
 
-
-
 function sectionTouch(e, type, leftbtn, rightBtn, max,) {
 
     if (e.type == 'touchstart') {
@@ -260,33 +268,34 @@ function sectionTouch(e, type, leftbtn, rightBtn, max,) {
 
 
 /*  */
-let diplomCurrSlide = 1
-function diplomSlider(evt, leftbtn, rightBtn, wrapper, container, max = 6) {
+
+function diplomSlider(evt, leftbtn, rightBtn, wrapper, cardSize = 250 + 15) {
     //max is index, start from 0
     let { slideto } = evt.currentTarget.dataset
-    slideto = Number(slideto)
+    slideto = Number(slideto) > 0 ? 1 : -1
+    const { scrollLeft } = wrapper
 
-    const scrollVal = (container.width() / max) * diplomCurrSlide
-
+    const scrollVal = scrollLeft + (cardSize * slideto)
     wrapper.scrollTo(scrollVal, 0)
 
-
-
-    diplomCheckScroll(leftbtn, rightBtn, scrollVal, container.width())
+    diplomCheckScroll(leftbtn, rightBtn, wrapper)
 }
-function diplomCheckScroll(leftbtn, rightBtn, scrollVal, containerWidth) {
-    if (scrollVal + 100 >= containerWidth) {
-        rightBtn.attr('disabled', true)
-    } else {
-
-        rightBtn.attr('disabled', false)
-    }
-
-    if (scrollVal < 100) {
+function diplomCheckScroll(leftbtn, rightBtn, wrapper) {
+    const { scrollLeft, scrollWidth, clientWidth } = wrapper
+    if (scrollLeft === 0) {
         leftbtn.attr('disabled', true)
+
     } else {
         leftbtn.attr('disabled', false)
     }
+
+    if (scrollLeft + clientWidth >= scrollWidth) {
+        rightBtn.attr('disabled', true)
+
+    } else {
+        rightBtn.attr('disabled', false)
+    }
+
 
 }
 /*  */

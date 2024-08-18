@@ -13,38 +13,45 @@
 
 .diploms__c-slider {
     position: relative;
-    overflow: hidden;
+
     width: 100%;
     height: 355px;
+    margin-bottom: 50px;
 }
 
 .diploms__c-slider-btn {
     position: absolute;
     top: calc(50% - 20px);
     cursor: pointer;
+    z-index: 2;
 }
-.diploms__c-slider-btn_left{
+
+.diploms__c-slider-btn_left {
     left: 0;
-    
+
 }
-.diploms__c-slider-btn_right{
+
+.diploms__c-slider-btn_right {
     right: 0;
 }
-.diploms__c-slider-wrp{
+
+.diploms__c-slider-wrp {
     margin: auto;
     margin-bottom: 50px;
     width: calc(100% - 80px);
     height: 100%;
-    overflow: auto;
-    transition: all .5s;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 0 20px;
     scroll-behavior: smooth;
+
 }
-/* .diploms__c-slider-wrp::-webkit-scrollbar{
+.diploms__c-slider-wrp::-webkit-scrollbar{
     width: 0;
-} */
+}
 
 .diploms__c-slider-items {
-
+    transition: all .5s;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(6, minmax(250px, 1fr));

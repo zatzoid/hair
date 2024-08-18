@@ -1,6 +1,6 @@
 .payment {
     padding: 60px 0;
-    background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #F0F0FD 6%, #F7F2FF 26%,  #F7F2FF 76%, #F0F0FD 94%, rgba(0,0,0,0) 100%);
     box-sizing: border-box;
     color: var(--col-black);
 }

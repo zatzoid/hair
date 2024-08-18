@@ -2,7 +2,9 @@
     margin-top: 60px;
     padding: 60px 0;
     box-sizing: border-box;
-    background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%);
+  /*   background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%); */
+
+  background: linear-gradient(180deg, rgba(0,198,239,0) 0%, #F0F0FD 8%, #F7F2FF 26%, #FAEDFD 100%);
     color: var(--col-black);
 }
 
