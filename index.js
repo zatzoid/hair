@@ -14,10 +14,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* heal slider */
-     //секционный слайдер
+    //секционный слайдер
     const healSliderMain = $('.heal__c')
-    const healSliderSelf = $('.heal__c-slides')
-    const healSliderIndication = $('.heal__c-btn-indication')
+    const healSliderSelf = healSliderMain.find('.heal__c-slides')
+    const healSliderIndication = healSliderMain.find('.heal__c-btn-indication')
     const healSliderBtns = healSliderMain.find('.heal__c-btn')
 
     healSliderBtns.on('click', (e) => healSlider(e, healSliderSelf, healSliderIndication, healSliderBtns))
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* pack slider */
-     //секционный слайдер
+    //секционный слайдер
     const packSliderMain = $('.packs')
     const packSliderSelf = packSliderMain.find('.packs__items')
     const packLeftBtn = packSliderMain.find('.slider-btn_left')
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     /* reviews slider */
-     //секционный слайдер
+    //секционный слайдер
     const reviewsSliderMain = $('.reviews')
     const reviewsSliderSelf = reviewsSliderMain.find('.reviews__c-items')
     const reviewsLeftBtn = reviewsSliderMain.find('.slider-btn_left')
@@ -222,7 +222,7 @@ let sliderState = {
     pack: 0,
     review: 0
 }
-let sectionTouchStart = 0
+
 
 function sectionSlider(e, type, leftbtn, rightBtn, container, max, gap = 0) {
     //max is index, start from 0
@@ -243,6 +243,9 @@ function sectionSlider(e, type, leftbtn, rightBtn, container, max, gap = 0) {
 
 }
 
+
+
+let sectionTouchStart = 0
 
 function sectionTouch(e, type, leftbtn, rightBtn, max,) {
 

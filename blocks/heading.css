@@ -90,6 +90,7 @@
     line-height: 14px;
     color: var(--col-grey);
     margin-bottom: 5px;
+    display: block;
 }
 
 .heading__db-left-name {
@@ -98,7 +99,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-
+    display: block;
 }
 
 .heading__dd-left-arrow {

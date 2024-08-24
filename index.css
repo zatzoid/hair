@@ -1,3 +1,5 @@
+@import url(./normalize.css);
+
 /* ui */
 @import url(./blocks/ui/yt-btn.css);
 @import url(./blocks/ui/btn-gr-bl.css);
@@ -6,13 +8,13 @@
 @import url(./blocks/ui/btn-tr.css);
 @import url(./blocks/ui/drop-down.css);
 @import url(./blocks/ui/slider-btn.css);
-@import url(./blocks/ui/modal.css);
 /* ui */
 
-@import url(./normalize.css);
+
 
 /* banners */
 @import url(./blocks/cookie.css);
+@import url(./blocks/ui/modal.css);
 /* banners */
 
 
@@ -60,6 +62,9 @@ body {
     overflow-x: hidden;
     color: var(--col-black);
 
+}
+span {
+    display: block;
 }
 
 a {

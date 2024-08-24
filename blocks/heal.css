@@ -2,9 +2,9 @@
     margin-top: 60px;
     padding: 60px 0;
     box-sizing: border-box;
-  /*   background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%); */
+    /*   background: linear-gradient(90deg, #F0F0FD 0%, #F7F2FF 48.65%, #FAEDFD 99%); */
 
-  background: linear-gradient(180deg, rgba(0,198,239,0) 0%, #F0F0FD 8%, #F7F2FF 26%, #FAEDFD 100%);
+    background: linear-gradient(180deg, rgba(0, 198, 239, 0) 0%, #F0F0FD 8%, #F7F2FF 26%, #FAEDFD 100%);
     color: var(--col-black);
 }
 
@@ -22,7 +22,8 @@
     box-sizing: border-box;
     position: relative;
 }
-.heal__c-btn-indication{
+
+.heal__c-btn-indication {
     position: absolute;
     background-color: var(--col-white);
     width: calc(100% / 6);
@@ -33,7 +34,7 @@
     transition: all .5s;
 }
 
-.heal__c-btn  {
+.heal__c-btn {
     height: 100%;
     width: 100%;
     background-color: transparent;
@@ -51,7 +52,7 @@
     cursor: pointer;
     position: relative;
     z-index: 2;
-   
+
 }
 
 .heal__c-btn:disabled {
@@ -81,7 +82,7 @@
     font-weight: 500;
     line-height: 17.5px;
     text-align: center;
-
+    display: block;
 
 }
 
@@ -99,7 +100,7 @@
     height: 100%;
     width: 100%;
     transition: all .5s;
-   
+
 }
 
 .heal__c-slide {
@@ -160,16 +161,17 @@
 }
 
 @media screen and (max-width: 1184px) {
-    .heal__c-slider{
+    .heal__c-slider {
         border-radius: 0 0 30px;
     }
-    
+
 }
 
 @media screen and (max-width:780px) {
-    .heal__c-btn-indication{
+    .heal__c-btn-indication {
         display: none;
     }
+
     .heal__c {
         background-color: var(--col-white);
         border-radius: 30px;
@@ -190,7 +192,7 @@
         padding: 0;
     }
 
-    .heal__c-btn  {
+    .heal__c-btn {
         flex-direction: row;
         justify-content: flex-start;
         padding: 0;
@@ -201,7 +203,8 @@
         height: 45px;
         background-color: var(--col-grey-light);
     }
-    .heal__c-btn-name{
+
+    .heal__c-btn-name {
         text-align: left;
     }
 
@@ -231,7 +234,8 @@
         grid-template-columns: 1fr;
         padding: 0;
     }
-    .heal__c-slide-body{
+
+    .heal__c-slide-body {
         gap: 15px;
     }
 

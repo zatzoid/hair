@@ -14,11 +14,7 @@
     align-items: center;
     color: var(--col-white);
     transform: translateY(50px);
-    font-family: Montserrat;
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 31.9px;
-    text-align: left;
+   
 }
 
 
@@ -32,6 +28,14 @@
     font-weight: 700;
     line-height: 25px;
 
+  
+}
+.commercial-red__content h2{
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 31.9px;
+    text-align: left;
 }
 
 
@@ -49,7 +53,7 @@
 }
 
 @media screen and (max-width: 710px) {
-    .commercial-red__content {
+    .commercial-red__content h2{
         padding: 20px 30px;
         font-size: 16px;
         line-height: 20px;
